@@ -2,11 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
 /**
- * @mixin IdeHelperTweet
+ * @property string $text
  */
 class Tweet extends Model {
-  protected $guarded = [];
+  static $table = 'tweets';
 }
