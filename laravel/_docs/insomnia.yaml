@@ -1,0 +1,168 @@
+_type: export
+__export_format: 4
+__export_date: 2023-05-17T12:32:27.644Z
+__export_source: insomnia.desktop.app:v2023.2.0
+resources:
+  - _id: req_96dc0d0112a84529a027430d450357e2
+    parentId: fld_25b02e5485214b24b9248decf8508836
+    modified: 1684322012396
+    created: 1684321267090
+    url: http://localhost:8000/meta/ping
+    name: ping
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1684321983618
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_25b02e5485214b24b9248decf8508836
+    parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
+    modified: 1684321979560
+    created: 1684321979560
+    name: meta
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1684321979560
+    _type: request_group
+  - _id: wrk_a88f9fb4df484eb28cb77579b4e283b1
+    parentId: null
+    modified: 1684321240585
+    created: 1684321240585
+    name: laravel
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_979d8924a2204df3b7d04f23e0301bb0
+    parentId: fld_25b02e5485214b24b9248decf8508836
+    modified: 1684322220807
+    created: 1684322218156
+    url: http://localhost:8000/meta/now
+    name: now
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1684103111316.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_952b22b930cc4cdab81dccab31deaec0
+    parentId: fld_3f28e67f576f4011add4db40a8458498
+    modified: 1684326205166
+    created: 1684326200152
+    url: http://localhost:8000/tweets
+    name: index
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1684324846468.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_3f28e67f576f4011add4db40a8458498
+    parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
+    modified: 1684325797854
+    created: 1684325795029
+    name: tweets
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1684321979510
+    _type: request_group
+  - _id: req_5f438fc5850d40cc9aedead9c1eda3d7
+    parentId: fld_3f28e67f576f4011add4db40a8458498
+    modified: 1684326206379
+    created: 1684325800752
+    url: http://localhost:8000/tweets
+    name: create
+    description: ""
+    method: POST
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1684324846418.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_4c61778f42f91623bc8c3bc6b2479dd1db01a515
+    parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
+    modified: 1684321240588
+    created: 1684321240588
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1684321240588
+    _type: environment
+  - _id: jar_4c61778f42f91623bc8c3bc6b2479dd1db01a515
+    parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
+    modified: 1684326376787
+    created: 1684321240589
+    name: Default Jar
+    cookies:
+      - key: XSRF-TOKEN
+        value: eyJpdiI6IjkzQXEwK3hFZEw5TWhiaERXLzA3K3c9PSIsInZhbHVlIjoiTnRxZ3hURmEwWTNBUVVNdlVIRC8wNHFRbngzN3czamowNWh6L2g3ZXhuaXlJRXJNckdBZlhseHBTRE5yM0loSDdXSjhmeVMrajI3bERPQUtIL1Q3TzR1cHdOTnhDNFFxaTIxQitEU1AybmNaK2VIVkxKWVM1TzNMamI0dnZsSGwiLCJtYWMiOiI3NmYzZGVkMWE1N2M2MTk4MGMzZTg4ODg3OGM0YTI0MTAwNWUwMTIzNGQ0MzBmM2RhMGM2NDMyNTcwMTU2Mzg2IiwidGFnIjoiIn0%3D
+        expires: 2023-05-17T14:18:15.000Z
+        maxAge: 7200
+        domain: localhost
+        path: /
+        extensions:
+          - samesite=lax
+        hostOnly: true
+        creation: 2023-05-17T11:01:38.938Z
+        lastAccessed: 2023-05-17T12:18:15.254Z
+        id: "8611830450095506"
+      - key: laravel_session
+        value: eyJpdiI6IjhXSlpLZ2NEbGN3SkZ5V2N0cjcvT2c9PSIsInZhbHVlIjoibFdmRXFLbm9uQlVQV1J4aWFHVy9mTkxTTzNsUGNocmRJNHcrVmxvRVV2MmU5YWR1NzlERWZCWjBMZWtvVE0zMDVPUk44S293RGVFaG9YYnRpWHFsY0Ntc3R5V2dCSTBBcmdVU3JsV0RtK2xPYzNVUlp2cEp2clkrblkvWmY5K1kiLCJtYWMiOiIxNDdkY2VhOGYyMGY3OWE5NzU5MWUzOTEwZDgyMTY5YWJmNjFlZTlmNWZlOTUwZWY5YTI2ZGVlMzE1MjRiZDUwIiwidGFnIjoiIn0%3D
+        expires: 2023-05-17T14:26:16.000Z
+        maxAge: 7200
+        domain: localhost
+        path: /
+        httpOnly: true
+        extensions:
+          - samesite=lax
+        hostOnly: true
+        creation: 2023-05-17T11:01:38.938Z
+        lastAccessed: 2023-05-17T12:26:16.787Z
+        id: "7914854716388957"
+    _type: cookie_jar
+  - _id: spc_525102b2bb414a0e8c7d04c5e998a738
+    parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
+    modified: 1684321240585
+    created: 1684321240585
+    fileName: laravel
+    contents: ""
+    contentType: yaml
+    _type: api_spec
