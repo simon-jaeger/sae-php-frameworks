@@ -1,20 +1,21 @@
 <?php
 
-use App\Models\Tweet;
+use App\Models\Todo;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
   public function up() {
-    Schema::create(Tweet::$table, function (Blueprint $table) {
+    Schema::create(Todo::table(), function (Blueprint $table) {
       $table->id();
-      $table->text('text');
+      $table->string('title');
+      $table->boolean('done');
       $table->timestamps();
     });
   }
 
   public function down() {
-    Schema::drop(Tweet::$table);
+    Schema::drop(Todo::table());
   }
 };

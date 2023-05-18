@@ -1,11 +1,11 @@
 _type: export
 __export_format: 4
-__export_date: 2023-05-17T12:32:27.644Z
+__export_date: 2023-05-18T19:52:18.365Z
 __export_source: insomnia.desktop.app:v2023.2.0
 resources:
   - _id: req_96dc0d0112a84529a027430d450357e2
     parentId: fld_25b02e5485214b24b9248decf8508836
-    modified: 1684322012396
+    modified: 1684438397088
     created: 1684321267090
     url: http://localhost:8000/meta/ping
     name: ping
@@ -13,7 +13,15 @@ resources:
     method: GET
     body: {}
     parameters: []
-    headers: []
+    headers:
+      - id: pair_ffee73470b924e5098f998a6947a6917
+        name: Content-Type
+        value: application/json
+        description: ""
+      - id: pair_bd99985eceae4776b5d36a6894286d09
+        name: X-Requested-With
+        value: XMLHttpRequest
+        description: ""
     authentication: {}
     metaSortKey: -1684321983618
     isPrivate: false
@@ -44,7 +52,7 @@ resources:
     _type: workspace
   - _id: req_979d8924a2204df3b7d04f23e0301bb0
     parentId: fld_25b02e5485214b24b9248decf8508836
-    modified: 1684322220807
+    modified: 1684438393609
     created: 1684322218156
     url: http://localhost:8000/meta/now
     name: now
@@ -52,7 +60,15 @@ resources:
     method: GET
     body: {}
     parameters: []
-    headers: []
+    headers:
+      - id: pair_ebee4c6f9ab948378aff1632cf3a2b1f
+        name: Content-Type
+        value: application/json
+        description: ""
+      - id: pair_654ee3d8f7334607b70e1415b7de667b
+        name: X-Requested-With
+        value: XMLHttpRequest
+        description: ""
     authentication: {}
     metaSortKey: -1684103111316.5
     isPrivate: false
@@ -65,15 +81,23 @@ resources:
     _type: request
   - _id: req_952b22b930cc4cdab81dccab31deaec0
     parentId: fld_3f28e67f576f4011add4db40a8458498
-    modified: 1684326205166
+    modified: 1684438389788
     created: 1684326200152
-    url: http://localhost:8000/tweets
+    url: http://localhost:8000/todos
     name: index
     description: ""
     method: GET
     body: {}
     parameters: []
-    headers: []
+    headers:
+      - id: pair_49ee99ab44a4417c92482d21119e39f7
+        name: Content-Type
+        value: application/json
+        description: ""
+      - id: pair_748de80fccde47d49be3e5c4f70747e9
+        name: X-Requested-With
+        value: XMLHttpRequest
+        description: ""
     authentication: {}
     metaSortKey: -1684324846468.5
     isPrivate: false
@@ -86,9 +110,9 @@ resources:
     _type: request
   - _id: fld_3f28e67f576f4011add4db40a8458498
     parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
-    modified: 1684325797854
+    modified: 1684437175696
     created: 1684325795029
-    name: tweets
+    name: todos
     description: ""
     environment: {}
     environmentPropertyOrder: null
@@ -96,17 +120,97 @@ resources:
     _type: request_group
   - _id: req_5f438fc5850d40cc9aedead9c1eda3d7
     parentId: fld_3f28e67f576f4011add4db40a8458498
-    modified: 1684326206379
+    modified: 1684438337892
     created: 1684325800752
-    url: http://localhost:8000/tweets
+    url: http://localhost:8000/todos
     name: create
     description: ""
     method: POST
-    body: {}
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"title": "learn insomnia"
+        }
     parameters: []
-    headers: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_a16a4920cc514fed9153355529310b3c
+      - id: pair_726db1ec690645baa45ee8beae85607c
+        name: X-Requested-With
+        value: XMLHttpRequest
+        description: ""
     authentication: {}
     metaSortKey: -1684324846418.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_f6a100d48aad400b81988425d9eaa5e1
+    parentId: fld_3f28e67f576f4011add4db40a8458498
+    modified: 1684439100003
+    created: 1684438750650
+    url: http://localhost:8000/todos
+    name: update
+    description: ""
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"id": 1,
+        	"title": "learn patching",
+        	"done": true
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_a16a4920cc514fed9153355529310b3c
+      - id: pair_726db1ec690645baa45ee8beae85607c
+        name: X-Requested-With
+        value: XMLHttpRequest
+        description: ""
+    authentication: {}
+    metaSortKey: -1684324130718.375
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_07d0c760dd5a49fbafc78babadcff890
+    parentId: fld_3f28e67f576f4011add4db40a8458498
+    modified: 1684439082207
+    created: 1684438237768
+    url: http://localhost:8000/todos
+    name: delete
+    description: ""
+    method: DELETE
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"id": 1
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_6b7d4fef92aa407c80f5edf0cab1170d
+      - id: pair_ef9a3a62f9354ca598d72b885ad4166f
+        name: X-Requested-With
+        value: XMLHttpRequest
+        description: ""
+    authentication: {}
+    metaSortKey: -1684323415018.25
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
@@ -128,7 +232,7 @@ resources:
     _type: environment
   - _id: jar_4c61778f42f91623bc8c3bc6b2479dd1db01a515
     parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
-    modified: 1684326376787
+    modified: 1684439510729
     created: 1684321240589
     name: Default Jar
     cookies:
@@ -143,10 +247,10 @@ resources:
         hostOnly: true
         creation: 2023-05-17T11:01:38.938Z
         lastAccessed: 2023-05-17T12:18:15.254Z
-        id: "8611830450095506"
+        id: "6547905946944823"
       - key: laravel_session
-        value: eyJpdiI6IjhXSlpLZ2NEbGN3SkZ5V2N0cjcvT2c9PSIsInZhbHVlIjoibFdmRXFLbm9uQlVQV1J4aWFHVy9mTkxTTzNsUGNocmRJNHcrVmxvRVV2MmU5YWR1NzlERWZCWjBMZWtvVE0zMDVPUk44S293RGVFaG9YYnRpWHFsY0Ntc3R5V2dCSTBBcmdVU3JsV0RtK2xPYzNVUlp2cEp2clkrblkvWmY5K1kiLCJtYWMiOiIxNDdkY2VhOGYyMGY3OWE5NzU5MWUzOTEwZDgyMTY5YWJmNjFlZTlmNWZlOTUwZWY5YTI2ZGVlMzE1MjRiZDUwIiwidGFnIjoiIn0%3D
-        expires: 2023-05-17T14:26:16.000Z
+        value: eyJpdiI6IkRPQ1VqL1BsSEt5a3ZRcitiWUQxdEE9PSIsInZhbHVlIjoiL1QrdW1MMmVtMmpTb1ZXRklSOWxPZ01rNUNyMFg3eVJvMUpSSVlYZENqS0NSNkJtcGR5eUtFU2c3Vm56NDR0bEM1anNIdXdBcWNVa0dLcTl6S0dpMnkzZXdxR2tBUHJmNHNnQ3hPU2pkSWU2cUkzb0N6SnI2WDg2NkVNVmpCUjYiLCJtYWMiOiJiZTkyZTg2MDE5NjQyZGFhNWVlMDAwZjM0YjY4NGY3YzM2ZTE1MWFjZDc1NWZiOTg2ZjNmNmQxYTE2Y2VjOTM2IiwidGFnIjoiIn0%3D
+        expires: 2023-05-18T21:51:50.000Z
         maxAge: 7200
         domain: localhost
         path: /
@@ -155,8 +259,8 @@ resources:
           - samesite=lax
         hostOnly: true
         creation: 2023-05-17T11:01:38.938Z
-        lastAccessed: 2023-05-17T12:26:16.787Z
-        id: "7914854716388957"
+        lastAccessed: 2023-05-18T19:51:50.729Z
+        id: "05531353105437953"
     _type: cookie_jar
   - _id: spc_525102b2bb414a0e8c7d04c5e998a738
     parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1

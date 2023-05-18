@@ -16,6 +16,7 @@ php artisan serve
 
 ```bash
 # (re-)create database
+touch database/database.sqlite
 php artisan migrate:fresh
 ```
 
@@ -35,9 +36,10 @@ php artisan migrate:fresh
 - endpoints (VERB /controller/method)
 - http request body (params)
 - http response (return value)
-- erd: database design
 - models and migrations
 - crud (restful controller methods)
+- ...advanced:
+- seeding/faker
 - query strings (filtering, sorting, ...)
 - pagination
 - auth
