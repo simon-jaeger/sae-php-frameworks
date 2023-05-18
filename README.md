@@ -28,7 +28,7 @@ php artisan migrate:fresh
 - php cli
 - composer
 - mvc: what and why?
-- laravel: install start project
+- laravel: install starter, artisan serve
 - api: what are headless backends?
 - routing (GET /ping)
 - api client: https://insomnia.rest/
@@ -36,7 +36,8 @@ php artisan migrate:fresh
 - endpoints (VERB /controller/method)
 - http request body (params)
 - http response (return value)
-- models and migrations
+- models
+- migrations
 - crud (restful controller methods)
 - ...advanced:
 - seeding/faker

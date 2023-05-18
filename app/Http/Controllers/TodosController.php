@@ -21,9 +21,12 @@ class TodosController extends Controller {
 
   function update(Request $request) {
     $id = $request->input('id');
-    $payload = $request->all();
+    $title = $request->input('title');
+    $done = $request->input('done');
     $model = Todo::findOrFail($id);
-    $model->merge($payload)->save();
+    $model->title = $title;
+    $model->done = $done;
+    $model->save();
     return $model;
   }
 
