@@ -39,11 +39,10 @@ php artisan migrate:fresh --seed
 - models
 - migrations
 - crud (restful controller methods)
-- ...advanced:
 - seeding/faker
-- query strings (filtering, sorting, ...)
-- pagination
 - auth
 - middleware
 - validation
+- query strings (filtering, sorting, ...)
+- pagination
 - file system and uploads

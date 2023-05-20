@@ -11,9 +11,9 @@ class TweetsController extends Controller {
   }
 
   function create(Request $request) {
-    $title = $request->input('title');
+    $text = $request->input('text');
     $model = Tweet::create([
-      'title' => $title,
+      'text' => $text,
       'done' => false,
     ]);
     return $model;
@@ -21,11 +21,9 @@ class TweetsController extends Controller {
 
   function update(Request $request) {
     $id = $request->input('id');
-    $title = $request->input('title');
-    $done = $request->input('done');
+    $text = $request->input('text');
     $model = Tweet::findOrFail($id);
-    $model->title = $title;
-    $model->done = $done;
+    $model->text = $text;
     $model->save();
     return $model;
   }
