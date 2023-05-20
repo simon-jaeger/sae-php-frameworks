@@ -1,13 +1,13 @@
 _type: export
 __export_format: 4
-__export_date: 2023-05-18T19:52:18.365Z
+__export_date: 2023-05-20T12:15:04.616Z
 __export_source: insomnia.desktop.app:v2023.2.0
 resources:
   - _id: req_96dc0d0112a84529a027430d450357e2
     parentId: fld_25b02e5485214b24b9248decf8508836
-    modified: 1684438397088
+    modified: 1684583666524
     created: 1684321267090
-    url: http://localhost:8000/meta/ping
+    url: "{{ _.baseUrl }}/meta/ping"
     name: ping
     description: ""
     method: GET
@@ -52,9 +52,9 @@ resources:
     _type: workspace
   - _id: req_979d8924a2204df3b7d04f23e0301bb0
     parentId: fld_25b02e5485214b24b9248decf8508836
-    modified: 1684438393609
+    modified: 1684583626140
     created: 1684322218156
-    url: http://localhost:8000/meta/now
+    url: "{{ _.baseUrl }}/meta/now"
     name: now
     description: ""
     method: GET
@@ -81,9 +81,9 @@ resources:
     _type: request
   - _id: req_952b22b930cc4cdab81dccab31deaec0
     parentId: fld_3f28e67f576f4011add4db40a8458498
-    modified: 1684438389788
+    modified: 1684583630997
     created: 1684326200152
-    url: http://localhost:8000/todos
+    url: "{{ _.baseUrl }}/tweets"
     name: index
     description: ""
     method: GET
@@ -99,7 +99,7 @@ resources:
         value: XMLHttpRequest
         description: ""
     authentication: {}
-    metaSortKey: -1684324846468.5
+    metaSortKey: -1684324488568.4375
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
@@ -110,9 +110,9 @@ resources:
     _type: request
   - _id: fld_3f28e67f576f4011add4db40a8458498
     parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
-    modified: 1684437175696
+    modified: 1684583531126
     created: 1684325795029
-    name: todos
+    name: tweets
     description: ""
     environment: {}
     environmentPropertyOrder: null
@@ -120,9 +120,9 @@ resources:
     _type: request_group
   - _id: req_5f438fc5850d40cc9aedead9c1eda3d7
     parentId: fld_3f28e67f576f4011add4db40a8458498
-    modified: 1684438337892
+    modified: 1684583639439
     created: 1684325800752
-    url: http://localhost:8000/todos
+    url: "{{ _.baseUrl }}/tweets"
     name: create
     description: ""
     method: POST
@@ -142,7 +142,7 @@ resources:
         value: XMLHttpRequest
         description: ""
     authentication: {}
-    metaSortKey: -1684324846418.5
+    metaSortKey: -1684324309643.4062
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
@@ -153,9 +153,9 @@ resources:
     _type: request
   - _id: req_f6a100d48aad400b81988425d9eaa5e1
     parentId: fld_3f28e67f576f4011add4db40a8458498
-    modified: 1684439100003
+    modified: 1684583644398
     created: 1684438750650
-    url: http://localhost:8000/todos
+    url: "{{ _.baseUrl }}/tweets"
     name: update
     description: ""
     method: PATCH
@@ -188,9 +188,9 @@ resources:
     _type: request
   - _id: req_07d0c760dd5a49fbafc78babadcff890
     parentId: fld_3f28e67f576f4011add4db40a8458498
-    modified: 1684439082207
+    modified: 1684583649466
     created: 1684438237768
-    url: http://localhost:8000/todos
+    url: "{{ _.baseUrl }}/tweets"
     name: delete
     description: ""
     method: DELETE
@@ -221,18 +221,21 @@ resources:
     _type: request
   - _id: env_4c61778f42f91623bc8c3bc6b2479dd1db01a515
     parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
-    modified: 1684321240588
+    modified: 1684583591521
     created: 1684321240588
     name: Base Environment
-    data: {}
-    dataPropertyOrder: null
+    data:
+      baseUrl: http://localhost:8000
+    dataPropertyOrder:
+      "&":
+        - baseUrl
     color: null
     isPrivate: false
     metaSortKey: 1684321240588
     _type: environment
   - _id: jar_4c61778f42f91623bc8c3bc6b2479dd1db01a515
     parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
-    modified: 1684439510729
+    modified: 1684584840575
     created: 1684321240589
     name: Default Jar
     cookies:
@@ -247,10 +250,10 @@ resources:
         hostOnly: true
         creation: 2023-05-17T11:01:38.938Z
         lastAccessed: 2023-05-17T12:18:15.254Z
-        id: "6547905946944823"
+        id: "4866346002841948"
       - key: laravel_session
-        value: eyJpdiI6IkRPQ1VqL1BsSEt5a3ZRcitiWUQxdEE9PSIsInZhbHVlIjoiL1QrdW1MMmVtMmpTb1ZXRklSOWxPZ01rNUNyMFg3eVJvMUpSSVlYZENqS0NSNkJtcGR5eUtFU2c3Vm56NDR0bEM1anNIdXdBcWNVa0dLcTl6S0dpMnkzZXdxR2tBUHJmNHNnQ3hPU2pkSWU2cUkzb0N6SnI2WDg2NkVNVmpCUjYiLCJtYWMiOiJiZTkyZTg2MDE5NjQyZGFhNWVlMDAwZjM0YjY4NGY3YzM2ZTE1MWFjZDc1NWZiOTg2ZjNmNmQxYTE2Y2VjOTM2IiwidGFnIjoiIn0%3D
-        expires: 2023-05-18T21:51:50.000Z
+        value: eyJpdiI6InZrbE4yc3J4WTZvQmZOZ0tUaFdPVkE9PSIsInZhbHVlIjoicEZVTjlHOE9hdzZyOGdQcFFrbXNCYzA1Qkc3K3lDYUMyYWloQU03alhLakEwckQ3WkFYNlF5dlk3TUsvMmJQS1U2bmtXNzZ3RHV6eFdLd1UrU3p6U2JrTmtIUXBuS1JaL0pWZE1MTFIzVXYxMG5jRHpsOFR3REhUTW15VnFvcU4iLCJtYWMiOiJlYjY2ODdkMGViZWI5YmJlYWRjZjYwYjVjYTY5OTU1ZWJjNzE0MDZjOGYxOTk4NTI1YjEyOGExYTI3YjAwNjA1IiwidGFnIjoiIn0%3D
+        expires: 2023-05-20T14:14:00.000Z
         maxAge: 7200
         domain: localhost
         path: /
@@ -259,8 +262,8 @@ resources:
           - samesite=lax
         hostOnly: true
         creation: 2023-05-17T11:01:38.938Z
-        lastAccessed: 2023-05-18T19:51:50.729Z
-        id: "05531353105437953"
+        lastAccessed: 2023-05-20T12:14:00.575Z
+        id: "9151989231829227"
     _type: cookie_jar
   - _id: spc_525102b2bb414a0e8c7d04c5e998a738
     parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
@@ -270,3 +273,17 @@ resources:
     contents: ""
     contentType: yaml
     _type: api_spec
+  - _id: env_24e6e496adc34a068967747c7eb52f17
+    parentId: env_4c61778f42f91623bc8c3bc6b2479dd1db01a515
+    modified: 1684583606458
+    created: 1684583601720
+    name: dev
+    data:
+      baseUrl: http://localhost:8000
+    dataPropertyOrder:
+      "&":
+        - baseUrl
+    color: null
+    isPrivate: false
+    metaSortKey: 1684583601720
+    _type: environment
