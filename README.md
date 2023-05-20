@@ -17,7 +17,7 @@ php artisan serve
 ```bash
 # (re-)create database
 touch database/database.sqlite
-php artisan migrate:fresh
+php artisan migrate:fresh --seed
 ```
 
 ## outline

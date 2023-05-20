@@ -1,12 +1,12 @@
 <?php
-use App\Http\Controllers\TodosController;
+use App\Http\Controllers\TweetsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MetaController;
 
 Route::get('/meta/ping', [MetaController::class, 'ping']);
 Route::get('/meta/now', [MetaController::class, 'now']);
 
-Route::get('/todos', [TodosController::class, 'index']);
-Route::post('/todos', [TodosController::class, 'create']);
-Route::patch('/todos', [TodosController::class, 'update']);
-Route::delete('/todos', [TodosController::class, 'delete']);
+Route::get('/tweets', [TweetsController::class, 'index']);
+Route::post('/tweets', [TweetsController::class, 'create']);
+Route::patch('/tweets', [TweetsController::class, 'update']);
+Route::delete('/tweets', [TweetsController::class, 'delete']);

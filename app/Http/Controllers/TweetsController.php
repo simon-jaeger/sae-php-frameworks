@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Todo;
+use App\Models\Tweet;
 use Illuminate\Http\Request;
 
-class TodosController extends Controller {
+class TweetsController extends Controller {
   function index() {
-    return Todo::all();
+    return Tweet::all();
   }
 
   function create(Request $request) {
     $title = $request->input('title');
-    $model = Todo::create([
+    $model = Tweet::create([
       'title' => $title,
       'done' => false,
     ]);
@@ -23,7 +23,7 @@ class TodosController extends Controller {
     $id = $request->input('id');
     $title = $request->input('title');
     $done = $request->input('done');
-    $model = Todo::findOrFail($id);
+    $model = Tweet::findOrFail($id);
     $model->title = $title;
     $model->done = $done;
     $model->save();
@@ -32,7 +32,7 @@ class TodosController extends Controller {
 
   function delete(Request $request) {
     $id = $request->input('id');
-    $model = Todo::findOrFail($id);
+    $model = Tweet::findOrFail($id);
     $model->delete();
     return $model;
   }
