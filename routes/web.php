@@ -1,6 +1,6 @@
 <?php
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\TweetsController;
+use App\Http\Controllers\NotesController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MetaController;
@@ -8,10 +8,10 @@ use App\Http\Controllers\MetaController;
 Route::get('/meta/ping', [MetaController::class, 'ping']);
 Route::get('/meta/now', [MetaController::class, 'now']);
 
-Route::get('/tweets', [TweetsController::class, 'index']);
-Route::post('/tweets', [TweetsController::class, 'create']);
-Route::patch('/tweets', [TweetsController::class, 'update']);
-Route::delete('/tweets', [TweetsController::class, 'delete']);
+Route::get('/notes', [NotesController::class, 'index']);
+Route::post('/notes', [NotesController::class, 'create']);
+Route::patch('/notes', [NotesController::class, 'update']);
+Route::delete('/notes', [NotesController::class, 'delete']);
 
 Route::get('/users', [UsersController::class, 'index']);
 Route::get('/users/self', [UsersController::class, 'self'])->middleware('auth');

@@ -7,17 +7,12 @@ learn about mvc, rest and the laravel framework.
 ```bash
 # install dependencies
 composer install
-```
 
-```bash
 # start server
-php artisan serve
-```
+composer run-script serve
 
-```bash
 # (re-)create database
-touch database/database.sqlite
-php artisan migrate:fresh --seed
+composer run-script seed
 ```
 
 ## outline

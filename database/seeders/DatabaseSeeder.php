@@ -2,21 +2,27 @@
 
 namespace Database\Seeders;
 
-use App\Models\Tweet;
+use App\Models\Note;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 use Hash;
+
+// faker: https://fakerphp.github.io/formatters/text-and-paragraphs/
 
 class DatabaseSeeder extends Seeder {
   function run() {
+    $faker = Faker::create();
+
     User::create([
       'email' => 'simon.sae@mailinator.com',
       'password' => Hash::make('pw'),
     ]);
 
-    for ($i = 1; $i <= 3; $i++) {
-      Tweet::create([
-        'text' => "tweet #{$i}",
+    for ($i = 0; $i < 3; $i++) {
+      Note::create([
+        'title' => $faker->word(),
+        'content' => $faker->sentence(),
       ]);
     }
   }

@@ -1,6 +1,6 @@
 _type: export
 __export_format: 4
-__export_date: 2023-05-20T14:32:42.090Z
+__export_date: 2023-05-20T18:09:17.371Z
 __export_source: insomnia.desktop.app:v2023.2.0
 resources:
   - _id: req_96dc0d0112a84529a027430d450357e2
@@ -257,9 +257,9 @@ resources:
     _type: request
   - _id: req_952b22b930cc4cdab81dccab31deaec0
     parentId: fld_3f28e67f576f4011add4db40a8458498
-    modified: 1684583630997
+    modified: 1684603356607
     created: 1684326200152
-    url: "{{ _.baseUrl }}/tweets"
+    url: "{{ _.baseUrl }}/notes"
     name: index
     description: ""
     method: GET
@@ -286,9 +286,9 @@ resources:
     _type: request
   - _id: fld_3f28e67f576f4011add4db40a8458498
     parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
-    modified: 1684589793097
+    modified: 1684603352211
     created: 1684325795029
-    name: tweets
+    name: notes
     description: ""
     environment: {}
     environmentPropertyOrder: null
@@ -296,9 +296,9 @@ resources:
     _type: request_group
   - _id: req_5f438fc5850d40cc9aedead9c1eda3d7
     parentId: fld_3f28e67f576f4011add4db40a8458498
-    modified: 1684588077456
+    modified: 1684605911341
     created: 1684325800752
-    url: "{{ _.baseUrl }}/tweets"
+    url: "{{ _.baseUrl }}/notes"
     name: create
     description: ""
     method: POST
@@ -306,7 +306,8 @@ resources:
       mimeType: application/json
       text: |-
         {
-        	"text": "i love insomnia"
+        	"title": "insomnia",
+        	"content": "an api client"
         }
     parameters: []
     headers:
@@ -329,9 +330,9 @@ resources:
     _type: request
   - _id: req_f6a100d48aad400b81988425d9eaa5e1
     parentId: fld_3f28e67f576f4011add4db40a8458498
-    modified: 1684583644398
+    modified: 1684603597460
     created: 1684438750650
-    url: "{{ _.baseUrl }}/tweets"
+    url: "{{ _.baseUrl }}/notes"
     name: update
     description: ""
     method: PATCH
@@ -340,8 +341,8 @@ resources:
       text: |-
         {
         	"id": 1,
-        	"title": "learn patching",
-        	"done": true
+        	"title": "patched",
+        	"content": "this note was changed"
         }
     parameters: []
     headers:
@@ -364,9 +365,9 @@ resources:
     _type: request
   - _id: req_07d0c760dd5a49fbafc78babadcff890
     parentId: fld_3f28e67f576f4011add4db40a8458498
-    modified: 1684583649466
+    modified: 1684603531701
     created: 1684438237768
-    url: "{{ _.baseUrl }}/tweets"
+    url: "{{ _.baseUrl }}/notes"
     name: delete
     description: ""
     method: DELETE
@@ -411,14 +412,14 @@ resources:
     _type: environment
   - _id: jar_4c61778f42f91623bc8c3bc6b2479dd1db01a515
     parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
-    modified: 1684592431569
+    modified: 1684606146459
     created: 1684321240589
     name: Default Jar
     cookies:
       - key: laravel_session
-        value: eyJpdiI6Ik9DZC9HS2I0ZGRKbUdnN2txYkNPVkE9PSIsInZhbHVlIjoicUJ0Z1BxM2cxY3hRd0lxdXBzUUZNeXVZVFJkbjJxcFhHWi9LdzNKUTByVWVlcW5DM1dFOCtLYWFEdHdHcmxBdU1WbEd0RURFeFo1WmhvTktCOTM5LzB4UGhhaGppS3Z0bHJNYlZLNHhEN3VqVjc2MW5Pei9nT1c2SC91Mks2UTQiLCJtYWMiOiIzNjNiMTRhZTgzNDIwMjhhMTA5ZDE1ZWY2YWMyN2I1MDU2OWYyMjcxYjM3ODg5NDZiYzVhY2JlZWM2NDlhMmJjIiwidGFnIjoiIn0%3D
-        expires: 2023-05-20T16:20:31.000Z
-        maxAge: 7200
+        value: eyJpdiI6InZXUUVwblArY2UxNmVCUDAwY09sNlE9PSIsInZhbHVlIjoiZ2xXZGVWRmppdXNHeTZ2SnVqaHBGMWNTdjBCcjQ2UXZ3MUlDdlZZVG5RVGg5K0pPb01lNTRzenBkOGZjcmpuQlRna3hmTkk4Qk1HcWkrdDYvRXhyWlpxNTJhME5Kd1VockhzWEJsVGhIZGwwL1I5b2JCdVQrMU1haklmVHB3aWMiLCJtYWMiOiJhYmU0MzhkYmJkZjNkN2IzYWIwNDk2NDZiZWFjMzRlYTMzMTVkYWE0MDUzMzM0Mjc2ZjQzNTRmNzgzYWJjNjFiIiwidGFnIjoiIn0%3D
+        expires: 2023-05-21T18:09:06.000Z
+        maxAge: 86400
         domain: localhost
         path: /
         httpOnly: true
@@ -426,8 +427,8 @@ resources:
           - samesite=lax
         hostOnly: true
         creation: 2023-05-20T14:18:51.629Z
-        lastAccessed: 2023-05-20T14:20:31.569Z
-        id: "11953181662114765"
+        lastAccessed: 2023-05-20T18:09:06.459Z
+        id: "27873886965070227"
     _type: cookie_jar
   - _id: spc_525102b2bb414a0e8c7d04c5e998a738
     parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
