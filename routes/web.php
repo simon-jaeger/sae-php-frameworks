@@ -1,8 +1,8 @@
 <?php
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\NotesController;
 use App\Http\Controllers\UsersController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MetaController;
 
 Route::get('/meta/ping', [MetaController::class, 'ping']);
