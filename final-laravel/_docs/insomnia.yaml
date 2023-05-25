@@ -1,6 +1,6 @@
 _type: export
 __export_format: 4
-__export_date: 2023-05-20T18:09:17.371Z
+__export_date: 2023-05-25T17:15:09.938Z
 __export_source: insomnia.desktop.app:v2023.2.0
 resources:
   - _id: req_96dc0d0112a84529a027430d450357e2
@@ -50,6 +50,35 @@ resources:
     description: ""
     scope: collection
     _type: workspace
+  - _id: req_dd1f7cfc4c4d4d02b0802051086c98a7
+    parentId: fld_25b02e5485214b24b9248decf8508836
+    modified: 1685025624472
+    created: 1685025611423
+    url: "{{ _.baseUrl }}/meta/debug"
+    name: debug
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - id: pair_ebee4c6f9ab948378aff1632cf3a2b1f
+        name: Content-Type
+        value: application/json
+        description: ""
+      - id: pair_654ee3d8f7334607b70e1415b7de667b
+        name: X-Requested-With
+        value: XMLHttpRequest
+        description: ""
+    authentication: {}
+    metaSortKey: -1684212547467.25
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: req_979d8924a2204df3b7d04f23e0301bb0
     parentId: fld_25b02e5485214b24b9248decf8508836
     modified: 1684583626140
@@ -71,6 +100,40 @@ resources:
         description: ""
     authentication: {}
     metaSortKey: -1684103111316.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_d1d6d3e385164b0094fc19c9b690b713
+    parentId: fld_25b02e5485214b24b9248decf8508836
+    modified: 1685032896906
+    created: 1685032857689
+    url: "{{ _.baseUrl }}/meta/echo"
+    name: echo
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"msg": "hello"
+        }
+    parameters: []
+    headers:
+      - id: pair_ebee4c6f9ab948378aff1632cf3a2b1f
+        name: Content-Type
+        value: application/json
+        description: ""
+      - id: pair_654ee3d8f7334607b70e1415b7de667b
+        name: X-Requested-With
+        value: XMLHttpRequest
+        description: ""
+    authentication: {}
+    metaSortKey: -1683993675165.75
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
@@ -125,7 +188,7 @@ resources:
     _type: request_group
   - _id: req_f7d66ebdacb84d43981f756fd4d8fc19
     parentId: fld_9675a480663d481e871c53f7f26ea09c
-    modified: 1684591434843
+    modified: 1685034422908
     created: 1684589785058
     url: "{{ _.baseUrl }}/auth/login"
     name: login
@@ -296,7 +359,7 @@ resources:
     _type: request_group
   - _id: req_5f438fc5850d40cc9aedead9c1eda3d7
     parentId: fld_3f28e67f576f4011add4db40a8458498
-    modified: 1684605911341
+    modified: 1685031918499
     created: 1684325800752
     url: "{{ _.baseUrl }}/notes"
     name: create
@@ -330,7 +393,7 @@ resources:
     _type: request
   - _id: req_f6a100d48aad400b81988425d9eaa5e1
     parentId: fld_3f28e67f576f4011add4db40a8458498
-    modified: 1684603597460
+    modified: 1685031970736
     created: 1684438750650
     url: "{{ _.baseUrl }}/notes"
     name: update
@@ -365,7 +428,7 @@ resources:
     _type: request
   - _id: req_07d0c760dd5a49fbafc78babadcff890
     parentId: fld_3f28e67f576f4011add4db40a8458498
-    modified: 1684603531701
+    modified: 1685031980502
     created: 1684438237768
     url: "{{ _.baseUrl }}/notes"
     name: delete
@@ -412,13 +475,13 @@ resources:
     _type: environment
   - _id: jar_4c61778f42f91623bc8c3bc6b2479dd1db01a515
     parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
-    modified: 1684606146459
+    modified: 1685034524678
     created: 1684321240589
     name: Default Jar
     cookies:
       - key: laravel_session
-        value: eyJpdiI6InZXUUVwblArY2UxNmVCUDAwY09sNlE9PSIsInZhbHVlIjoiZ2xXZGVWRmppdXNHeTZ2SnVqaHBGMWNTdjBCcjQ2UXZ3MUlDdlZZVG5RVGg5K0pPb01lNTRzenBkOGZjcmpuQlRna3hmTkk4Qk1HcWkrdDYvRXhyWlpxNTJhME5Kd1VockhzWEJsVGhIZGwwL1I5b2JCdVQrMU1haklmVHB3aWMiLCJtYWMiOiJhYmU0MzhkYmJkZjNkN2IzYWIwNDk2NDZiZWFjMzRlYTMzMTVkYWE0MDUzMzM0Mjc2ZjQzNTRmNzgzYWJjNjFiIiwidGFnIjoiIn0%3D
-        expires: 2023-05-21T18:09:06.000Z
+        value: eyJpdiI6IlMvZlZNcTRNWnVCYjZubDlHblI3bFE9PSIsInZhbHVlIjoiT3habUJnMHhoamFMRVgzUGVSY2xHTlJjR1BFYzVMa1g1ajJXZkhBbDJGaDYzOXVZakl2QWVNMVEvTHBPQysybS9CZlMxbHJqaVZoMi84VGxpWWZKWEdnaTVsZThqeGtURWpSSE9GMXRZZXNnNHd5OXpsWWNGUmJsVXF4OTNzcXEiLCJtYWMiOiI3YWExYzNjNGQ0YWQ3ZjJlNDYwOWQyNDA2OGQzYWNlYWI1MzNkMDlmYmUxNWY4M2M4YTQwZjY1MzkxMjUyZjgzIiwidGFnIjoiIn0%3D
+        expires: 2023-05-26T17:08:44.000Z
         maxAge: 86400
         domain: localhost
         path: /
@@ -427,8 +490,8 @@ resources:
           - samesite=lax
         hostOnly: true
         creation: 2023-05-20T14:18:51.629Z
-        lastAccessed: 2023-05-20T18:09:06.459Z
-        id: "27873886965070227"
+        lastAccessed: 2023-05-25T17:08:44.678Z
+        id: "4994738699616672"
     _type: cookie_jar
   - _id: spc_525102b2bb414a0e8c7d04c5e998a738
     parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
