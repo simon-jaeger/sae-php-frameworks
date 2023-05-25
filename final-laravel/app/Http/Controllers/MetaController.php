@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\Util;
+
 class MetaController extends Controller {
   function ping() {
     return "pong";
@@ -9,5 +11,9 @@ class MetaController extends Controller {
 
   function now() {
     return time();
+  }
+
+  function debug() {
+    return Util::PhpIni();
   }
 }
