@@ -19,10 +19,16 @@ class DatabaseSeeder extends Seeder {
       'password' => Hash::make('pw'),
     ]);
 
-    for ($i = 0; $i < 3; $i++) {
+    User::create([
+      'email' => 'other.sae@mailinator.com',
+      'password' => Hash::make('pw'),
+    ]);
+
+    for ($i = 0; $i < 10; $i++) {
       Note::create([
         'title' => $faker->word(),
         'content' => $faker->sentence(),
+        'user_id' => $faker->numberBetween(1, 2),
       ]);
     }
   }

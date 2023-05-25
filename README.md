@@ -52,7 +52,7 @@ composer run-script seed
 - relationships
 - T: add relationships to your entities and enforce auth
 - ...
-- computed (follower and likes count etc.)
+- computed properties
 - query strings (filtering, sorting, ...)
 - pagination
 - ...
@@ -61,3 +61,4 @@ composer run-script seed
 - ...
 - T: add more features and ask questions
 - T: present your project to the class
+- T: research other mvc frameworks (adonisjs, rails, django, asp.net, ...)
