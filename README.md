@@ -61,4 +61,4 @@ composer run-script seed
 - ...
 - T: add more features and ask questions
 - T: present your project to the class
-- T: research other mvc frameworks (adonisjs, rails, django, asp.net, ...)
+
