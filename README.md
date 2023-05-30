@@ -4,7 +4,7 @@ duration: 11 * 3h
 
 learn about mvc, rest and the laravel framework.
 
-## demo project: blog
+## demo project
 
 ```bash
 # install dependencies
