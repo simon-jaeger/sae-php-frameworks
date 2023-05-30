@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @property string $email
@@ -15,7 +14,14 @@ class User extends Model implements AuthenticatableContract {
 
   protected $hidden = ['password'];
 
-  function notes(): HasMany {
+  static function rules($isNew = false) {
+    return [
+      'email' => ['required', 'email', 'unique:users'],
+      'password' => [$isNew ? 'required' : 'sometimes', 'min:8'],
+    ];
+  }
+
+  function notes() {
     return $this->hasMany(Note::class);
   }
 }

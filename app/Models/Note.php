@@ -8,4 +8,8 @@ namespace App\Models;
  * @property numeric $user_id
  */
 class Note extends Model {
+  static $rules = [
+    'title' => ['required', 'max:255'],
+    'content' => ['sometimes'],
+  ];
 }

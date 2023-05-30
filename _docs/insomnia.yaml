@@ -1,6 +1,6 @@
 _type: export
 __export_format: 4
-__export_date: 2023-05-25T17:15:09.938Z
+__export_date: 2023-05-30T16:22:17.216Z
 __export_source: insomnia.desktop.app:v2023.2.0
 resources:
   - _id: req_96dc0d0112a84529a027430d450357e2
@@ -144,7 +144,7 @@ resources:
     _type: request
   - _id: req_15e321d530554af789f4f830edaeb600
     parentId: fld_9675a480663d481e871c53f7f26ea09c
-    modified: 1684590274162
+    modified: 1685463174106
     created: 1684589874805
     url: "{{ _.baseUrl }}/auth/register"
     name: register
@@ -155,7 +155,7 @@ resources:
       text: |-
         {
         	"email": "simon2.sae@mailinator.com",
-        	"password": "pw"
+        	"password": "password"
         }
     parameters: []
     headers:
@@ -167,7 +167,7 @@ resources:
         value: XMLHttpRequest
         description: ""
     authentication: {}
-    metaSortKey: -1684324264912.1484
+    metaSortKey: -1684324248094.1768
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
@@ -188,7 +188,7 @@ resources:
     _type: request_group
   - _id: req_f7d66ebdacb84d43981f756fd4d8fc19
     parentId: fld_9675a480663d481e871c53f7f26ea09c
-    modified: 1685034422908
+    modified: 1685463159742
     created: 1684589785058
     url: "{{ _.baseUrl }}/auth/login"
     name: login
@@ -211,7 +211,7 @@ resources:
         value: XMLHttpRequest
         description: ""
     authentication: {}
-    metaSortKey: -1684324264862.1484
+    metaSortKey: -1684324222942.2192
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
@@ -252,10 +252,10 @@ resources:
     _type: request
   - _id: req_41658fcff19b4ab5bb767e09768f8253
     parentId: fld_91b46f1c16d343fcaa3e2b414a36e716
-    modified: 1684589740078
+    modified: 1685461741170
     created: 1684589735246
-    url: "{{ _.baseUrl }}/users"
-    name: index
+    url: "{{ _.baseUrl }}/user"
+    name: read
     description: ""
     method: GET
     body: {}
@@ -281,23 +281,29 @@ resources:
     _type: request
   - _id: fld_91b46f1c16d343fcaa3e2b414a36e716
     parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
-    modified: 1684589735238
+    modified: 1685461172400
     created: 1684589735238
-    name: users
+    name: user
     description: ""
     environment: {}
     environmentPropertyOrder: null
     metaSortKey: -1683970810482
     _type: request_group
-  - _id: req_f370839f57544f71b10c343380efd1ee
+  - _id: req_d7bcee6530f545d69d7a818928d1fbc2
     parentId: fld_91b46f1c16d343fcaa3e2b414a36e716
-    modified: 1684589770309
-    created: 1684589753152
-    url: "{{ _.baseUrl }}/users/self"
-    name: self
+    modified: 1685462527674
+    created: 1685461731994
+    url: "{{ _.baseUrl }}/user"
+    name: update
     description: ""
-    method: GET
-    body: {}
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"email": "simon2.sae@mailinator.com",
+        	"password": "pw"
+        }
     parameters: []
     headers:
       - id: pair_49ee99ab44a4417c92482d21119e39f7
@@ -320,14 +326,21 @@ resources:
     _type: request
   - _id: req_952b22b930cc4cdab81dccab31deaec0
     parentId: fld_3f28e67f576f4011add4db40a8458498
-    modified: 1684603356607
+    modified: 1685461748761
     created: 1684326200152
     url: "{{ _.baseUrl }}/notes"
-    name: index
+    name: read
     description: ""
     method: GET
-    body: {}
-    parameters: []
+    body:
+      mimeType: application/json
+      text: ""
+    parameters:
+      - id: pair_67370fcc01204a5aabcf500281827f29
+        name: id
+        value: "2"
+        description: ""
+        disabled: true
     headers:
       - id: pair_49ee99ab44a4417c92482d21119e39f7
         name: Content-Type
@@ -475,13 +488,13 @@ resources:
     _type: environment
   - _id: jar_4c61778f42f91623bc8c3bc6b2479dd1db01a515
     parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
-    modified: 1685034524678
+    modified: 1685463178881
     created: 1684321240589
     name: Default Jar
     cookies:
       - key: laravel_session
-        value: eyJpdiI6IlMvZlZNcTRNWnVCYjZubDlHblI3bFE9PSIsInZhbHVlIjoiT3habUJnMHhoamFMRVgzUGVSY2xHTlJjR1BFYzVMa1g1ajJXZkhBbDJGaDYzOXVZakl2QWVNMVEvTHBPQysybS9CZlMxbHJqaVZoMi84VGxpWWZKWEdnaTVsZThqeGtURWpSSE9GMXRZZXNnNHd5OXpsWWNGUmJsVXF4OTNzcXEiLCJtYWMiOiI3YWExYzNjNGQ0YWQ3ZjJlNDYwOWQyNDA2OGQzYWNlYWI1MzNkMDlmYmUxNWY4M2M4YTQwZjY1MzkxMjUyZjgzIiwidGFnIjoiIn0%3D
-        expires: 2023-05-26T17:08:44.000Z
+        value: eyJpdiI6ImNHb1JYa0hjL0JvOTlqclZWSVRYOFE9PSIsInZhbHVlIjoiTE1NZnFMM3FCbEdNS3JIS1dFakFVZzk4WkUxRzFnd3QrSlNER3g3cnFBNm1uR2RxMWQwTWMwMWNHSlg2TnZOb0UxNG4wYkJKaGxpZmNraTg3WDBKTjk2b01jYmlDZzNRNUZ3ckwrYm1jcytMY1pyTXFDTG1LczAyM0pCUStIK08iLCJtYWMiOiJjZGUxZmI3Mjk5MzBiOGUxODIxNmRlNmI0NDgyM2E1NDQ3ZDNmNmIwY2I4MjIxYjc2NWMyNjQzNjU5NGU1ZjViIiwidGFnIjoiIn0%3D
+        expires: 2023-05-31T16:12:58.000Z
         maxAge: 86400
         domain: localhost
         path: /
@@ -490,8 +503,8 @@ resources:
           - samesite=lax
         hostOnly: true
         creation: 2023-05-20T14:18:51.629Z
-        lastAccessed: 2023-05-25T17:08:44.678Z
-        id: "4994738699616672"
+        lastAccessed: 2023-05-30T16:12:58.881Z
+        id: "8051294392505461"
     _type: cookie_jar
   - _id: spc_525102b2bb414a0e8c7d04c5e998a738
     parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
