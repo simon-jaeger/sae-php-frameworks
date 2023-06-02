@@ -59,16 +59,16 @@ composer run-script seed
 - E: users, auth, $user->notes()
 - T: add relationships to your entities and enforce auth
 - ........................................
-- query strings (filtering, sorting, ...)
+- query strings (filtering, sorting, searching, ...)
 - ?pagination
 - E: tasks
-- T: add filtering and sorting to your entities
+- T: add filtering, sorting and searching to your entities
 - ........................................
 - file system and uploads
 - E: pictures
 - T: create more media entitites (music, video, zips, fonts, ...)
 - ........................................
-- helpers, collections, datetime/carbon
+- helpers, collections, datetime/carbon, mail, ...
 - services (Util.php etc.)
 - ........................................
 - T: add more features and ask questions

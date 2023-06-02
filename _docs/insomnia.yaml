@@ -1,6 +1,6 @@
 _type: export
 __export_format: 4
-__export_date: 2023-05-30T16:22:17.216Z
+__export_date: 2023-06-02T10:49:42.421Z
 __export_source: insomnia.desktop.app:v2023.2.0
 resources:
   - _id: req_96dc0d0112a84529a027430d450357e2
@@ -252,9 +252,9 @@ resources:
     _type: request
   - _id: req_41658fcff19b4ab5bb767e09768f8253
     parentId: fld_91b46f1c16d343fcaa3e2b414a36e716
-    modified: 1685461741170
+    modified: 1685695915642
     created: 1684589735246
-    url: "{{ _.baseUrl }}/user"
+    url: "{{ _.baseUrl }}/users"
     name: read
     description: ""
     method: GET
@@ -281,19 +281,48 @@ resources:
     _type: request
   - _id: fld_91b46f1c16d343fcaa3e2b414a36e716
     parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
-    modified: 1685461172400
+    modified: 1685695913046
     created: 1684589735238
-    name: user
+    name: users
     description: ""
     environment: {}
     environmentPropertyOrder: null
     metaSortKey: -1683970810482
     _type: request_group
+  - _id: req_1e1d43793ddc4bb98afae75f62a36d9e
+    parentId: fld_91b46f1c16d343fcaa3e2b414a36e716
+    modified: 1685695926005
+    created: 1685695923396
+    url: "{{ _.baseUrl }}/users/self"
+    name: self
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - id: pair_49ee99ab44a4417c92482d21119e39f7
+        name: Content-Type
+        value: application/json
+        description: ""
+      - id: pair_748de80fccde47d49be3e5c4f70747e9
+        name: X-Requested-With
+        value: XMLHttpRequest
+        description: ""
+    authentication: {}
+    metaSortKey: -1684324443837.1797
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: req_d7bcee6530f545d69d7a818928d1fbc2
     parentId: fld_91b46f1c16d343fcaa3e2b414a36e716
-    modified: 1685462527674
+    modified: 1685695917157
     created: 1685461731994
-    url: "{{ _.baseUrl }}/user"
+    url: "{{ _.baseUrl }}/users"
     name: update
     description: ""
     method: PATCH
@@ -326,7 +355,7 @@ resources:
     _type: request
   - _id: req_952b22b930cc4cdab81dccab31deaec0
     parentId: fld_3f28e67f576f4011add4db40a8458498
-    modified: 1685461748761
+    modified: 1685697903125
     created: 1684326200152
     url: "{{ _.baseUrl }}/notes"
     name: read
@@ -335,12 +364,7 @@ resources:
     body:
       mimeType: application/json
       text: ""
-    parameters:
-      - id: pair_67370fcc01204a5aabcf500281827f29
-        name: id
-        value: "2"
-        description: ""
-        disabled: true
+    parameters: []
     headers:
       - id: pair_49ee99ab44a4417c92482d21119e39f7
         name: Content-Type
@@ -472,6 +496,181 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
+  - _id: req_45942612f7404d0cb7de9bba194547f1
+    parentId: fld_6373abada5b040daba8a680d1a6e81e1
+    modified: 1685702741605
+    created: 1685697868564
+    url: "{{ _.baseUrl }}/tasks"
+    name: read
+    description: ""
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    parameters:
+      - id: pair_67370fcc01204a5aabcf500281827f29
+        name: sortBy
+        value: prio
+        description: ""
+        disabled: false
+      - id: pair_511532e6f9db4666839f25a0c7353dd2
+        name: sortDir
+        value: asc
+        description: ""
+        disabled: true
+      - id: pair_07d3e8af8b7f48819d876bbee713a447
+        name: done
+        value: "false"
+        description: ""
+        disabled: false
+      - id: pair_5335d000d9214281a52bd998bba133ae
+        name: prio
+        value: "5"
+        description: ""
+        disabled: true
+      - id: pair_6800b182f974491ebbd2be1cefa9b039
+        name: prioOperator
+        value: ">"
+        description: ""
+        disabled: true
+      - id: pair_c0ca7981c29e479b81ca22af65777fd9
+        name: name
+        value: "%a%"
+        description: ""
+        disabled: true
+    headers:
+      - id: pair_49ee99ab44a4417c92482d21119e39f7
+        name: Content-Type
+        value: application/json
+        description: ""
+      - id: pair_748de80fccde47d49be3e5c4f70747e9
+        name: X-Requested-With
+        value: XMLHttpRequest
+        description: ""
+    authentication: {}
+    metaSortKey: -1684324488568.4375
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_6373abada5b040daba8a680d1a6e81e1
+    parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
+    modified: 1685697868557
+    created: 1685697868557
+    name: tasks
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1683795225943
+    _type: request_group
+  - _id: req_60182bd0029a4029a280cffcda690226
+    parentId: fld_6373abada5b040daba8a680d1a6e81e1
+    modified: 1685698729681
+    created: 1685697868562
+    url: "{{ _.baseUrl }}/tasks"
+    name: create
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "learn laravel",
+        	"done": false,
+        	"prio": 5
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_a16a4920cc514fed9153355529310b3c
+      - id: pair_726db1ec690645baa45ee8beae85607c
+        name: X-Requested-With
+        value: XMLHttpRequest
+        description: ""
+    authentication: {}
+    metaSortKey: -1684324309643.4062
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_cdd5fe5a0e514886bb4a1a812d8ca616
+    parentId: fld_6373abada5b040daba8a680d1a6e81e1
+    modified: 1685698767810
+    created: 1685697868569
+    url: "{{ _.baseUrl }}/tasks"
+    name: update
+    description: ""
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"id": 11,
+        	"name": "learn laravel",
+        	"done": true,
+        	"prio": 5
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_a16a4920cc514fed9153355529310b3c
+      - id: pair_726db1ec690645baa45ee8beae85607c
+        name: X-Requested-With
+        value: XMLHttpRequest
+        description: ""
+    authentication: {}
+    metaSortKey: -1684324130718.375
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_7388559434d54ceb958aa0f27b70d01b
+    parentId: fld_6373abada5b040daba8a680d1a6e81e1
+    modified: 1685698771054
+    created: 1685697868566
+    url: "{{ _.baseUrl }}/tasks"
+    name: delete
+    description: ""
+    method: DELETE
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"id": 11
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_6b7d4fef92aa407c80f5edf0cab1170d
+      - id: pair_ef9a3a62f9354ca598d72b885ad4166f
+        name: X-Requested-With
+        value: XMLHttpRequest
+        description: ""
+    authentication: {}
+    metaSortKey: -1684323415018.25
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: env_4c61778f42f91623bc8c3bc6b2479dd1db01a515
     parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
     modified: 1684583591521
@@ -488,13 +687,13 @@ resources:
     _type: environment
   - _id: jar_4c61778f42f91623bc8c3bc6b2479dd1db01a515
     parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
-    modified: 1685463178881
+    modified: 1685702738992
     created: 1684321240589
     name: Default Jar
     cookies:
       - key: laravel_session
-        value: eyJpdiI6ImNHb1JYa0hjL0JvOTlqclZWSVRYOFE9PSIsInZhbHVlIjoiTE1NZnFMM3FCbEdNS3JIS1dFakFVZzk4WkUxRzFnd3QrSlNER3g3cnFBNm1uR2RxMWQwTWMwMWNHSlg2TnZOb0UxNG4wYkJKaGxpZmNraTg3WDBKTjk2b01jYmlDZzNRNUZ3ckwrYm1jcytMY1pyTXFDTG1LczAyM0pCUStIK08iLCJtYWMiOiJjZGUxZmI3Mjk5MzBiOGUxODIxNmRlNmI0NDgyM2E1NDQ3ZDNmNmIwY2I4MjIxYjc2NWMyNjQzNjU5NGU1ZjViIiwidGFnIjoiIn0%3D
-        expires: 2023-05-31T16:12:58.000Z
+        value: eyJpdiI6IjY4MTBabVdONk5sVVRVV0xDUGozeXc9PSIsInZhbHVlIjoiWlVTSi9yNzB0NWtmeGw1em1hT1J6T3dOWHp1MjVLRWVnY0ZTSzBteWN2UXZVTlNoQkgyODVON0VZV0FQWHcyWDNvUzRTSExYTlppclNtYjRJelQvNmhieG9wVU5DUFlHNktzdlIvVzkvcnVtRllFRXhyMVRlZTBJSGVyV1BRbkkiLCJtYWMiOiI5ZjlmN2U2Yzc1MjNiZDU0ZmJmNDYxODk4MWI3MDkxYTc3OTNkMWYwNjhhYWJkMGIyNWNiYTZmMDFmZDdmZGU1IiwidGFnIjoiIn0%3D
+        expires: 2023-06-03T10:45:38.000Z
         maxAge: 86400
         domain: localhost
         path: /
@@ -503,8 +702,8 @@ resources:
           - samesite=lax
         hostOnly: true
         creation: 2023-05-20T14:18:51.629Z
-        lastAccessed: 2023-05-30T16:12:58.881Z
-        id: "8051294392505461"
+        lastAccessed: 2023-06-02T10:45:38.992Z
+        id: "4673333469794001"
     _type: cookie_jar
   - _id: spc_525102b2bb414a0e8c7d04c5e998a738
     parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1

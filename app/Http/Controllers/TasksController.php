@@ -8,8 +8,26 @@ use Illuminate\Http\Request;
 
 class TasksController extends Controller {
   function read(Request $request) {
-    // TODO: filter, sort
-    return Auth::user()->tasks()->get();
+    $query = Auth::user()->tasks();
+    if ($request->has('sortBy')) {
+      $sortBy = $request->input('sortBy');
+      $sortDir = $request->input('sortDir', 'desc');
+      $query->orderBy($sortBy, $sortDir);
+    }
+    if ($request->has('done')) {
+      $done = $request->boolean('done');
+      $query->where('done', '=', $done);
+    }
+    if ($request->has('prio')) {
+      $prio = $request->input('prio');
+      $prioOperator = $request->input('prioOperator', '=');
+      $query->where('prio', $prioOperator, $prio);
+    }
+    if ($request->has('name')) {
+      $name = $request->input('name');
+      $query->where('name', 'like', $name);
+    }
+    return $query->get();
   }
 
   function create(Request $request) {

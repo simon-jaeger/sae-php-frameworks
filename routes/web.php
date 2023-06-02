@@ -31,5 +31,3 @@ Route::middleware('auth')->group(function () {
   Route::patch('/tasks', [TasksController::class, 'update']);
   Route::delete('/tasks', [TasksController::class, 'delete']);
 });
-
-
