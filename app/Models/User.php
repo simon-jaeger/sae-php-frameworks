@@ -24,4 +24,8 @@ class User extends Model implements AuthenticatableContract {
   function notes() {
     return $this->hasMany(Note::class);
   }
+
+  function tasks() {
+    return $this->hasMany(Task::class);
+  }
 }

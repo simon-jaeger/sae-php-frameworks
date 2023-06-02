@@ -27,8 +27,9 @@ composer run-script seed
     - windows: https://scoop.sh/
 - php cli
 - composer
-- laravel: install starter, artisan serve
-- ...
+- laravel
+- T: install everything, setup starter project
+- ........................................
 - api: what are headless backends?
 - routing (GET /ping)
 - api client: https://insomnia.rest/
@@ -36,29 +37,40 @@ composer run-script seed
 - endpoints (VERB /controller/method)
 - http request body (params)
 - http response (return value)
+- E: meta controller
 - T: create more meta endpoints (echo, reverse, whoami, ...)
-- ...
+- ........................................
+- sqlite
 - models
 - migrations
 - crud (restful controller methods)
-- T: create more crudable entities (contacts, todos, events, ...)
-- ...
+- E: notes (crud)
+- T: create more crudable entities (contacts, recipes, pokemon, ...)
+- ........................................
 - seeding/faker
 - validation
+- E: notes (seed, validate)
 - T: add seeding and validation to your entities
-- ...
+- ........................................
+- users
 - auth
 - middleware
 - relationships
+- E: users, auth, $user->notes()
 - T: add relationships to your entities and enforce auth
-- ...
-- computed properties
+- ........................................
 - query strings (filtering, sorting, ...)
-- pagination
-- ...
+- ?pagination
+- E: tasks
+- T: add filtering and sorting to your entities
+- ........................................
 - file system and uploads
+- E: pictures
+- T: create more media entitites (music, video, zips, fonts, ...)
+- ........................................
+- helpers, collections, datetime/carbon
 - services (Util.php etc.)
-- ...
+- ........................................
 - T: add more features and ask questions
 - T: present your project to the class
 

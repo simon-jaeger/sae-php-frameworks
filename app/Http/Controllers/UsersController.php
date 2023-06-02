@@ -7,8 +7,12 @@ use Illuminate\Http\Request;
 use Auth;
 use Illuminate\Support\Facades\Hash;
 
-class UserController extends Controller {
+class UsersController extends Controller {
   function read() {
+    return User::get();
+  }
+
+  function self() {
     return Auth::user();
   }
 

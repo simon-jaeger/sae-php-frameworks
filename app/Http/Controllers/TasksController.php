@@ -2,25 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Note;
+use App\Models\Task;
 use Auth;
 use Illuminate\Http\Request;
 
-class NotesController extends Controller {
+class TasksController extends Controller {
   function read(Request $request) {
-    return Auth::user()->notes()->get();
+    // TODO: filter, sort
+    return Auth::user()->tasks()->get();
   }
 
   function create(Request $request) {
-    $payload = $request->validate(Note::$rules);
-    $model = Auth::user()->notes()->create($payload);
+    $payload = $request->validate(Task::$rules);
+    $model = Auth::user()->tasks()->create($payload);
     return $model;
   }
 
   function update(Request $request) {
     $id = $request->input('id');
-    $payload = $request->validate(Note::$rules);
-    $model = Auth::user()->notes()->findOrFail($id);
+    $payload = $request->validate(Task::$rules);
+    $model = Auth::user()->tasks()->findOrFail($id);
     $model->fill($payload);
     $model->save();
     return $model;
@@ -28,7 +29,7 @@ class NotesController extends Controller {
 
   function delete(Request $request) {
     $id = $request->input('id');
-    $model = Auth::user()->notes()->findOrFail($id);
+    $model = Auth::user()->tasks()->findOrFail($id);
     $model->delete();
     return $model;
   }

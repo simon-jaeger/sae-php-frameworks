@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Note;
+use App\Models\Task;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
@@ -25,10 +26,20 @@ class DatabaseSeeder extends Seeder {
     ]);
 
     for ($i = 0; $i < 10; $i++) {
+      $userId = 1;
+      // $userId = $faker->numberBetween(1, 2);
+
       Note::create([
         'title' => $faker->word(),
         'content' => $faker->sentence(),
-        'user_id' => $faker->numberBetween(1, 2),
+        'user_id' => $userId,
+      ]);
+
+      Task::create([
+        'name' => $faker->word(),
+        'done' => $faker->boolean(),
+        'prio' => $faker->numberBetween(1, 10),
+        'user_id' => $userId,
       ]);
     }
   }

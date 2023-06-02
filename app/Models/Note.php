@@ -10,6 +10,6 @@ namespace App\Models;
 class Note extends Model {
   static $rules = [
     'title' => ['required', 'max:255'],
-    'content' => ['sometimes'],
+    'content' => ['required'],
   ];
 }
