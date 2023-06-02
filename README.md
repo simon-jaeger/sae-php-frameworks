@@ -60,7 +60,6 @@ composer run-script seed
 - T: add relationships to your entities and enforce auth
 - ........................................
 - query strings (filtering, sorting, searching, ...)
-- ?pagination
 - E: tasks
 - T: add filtering, sorting and searching to your entities
 - ........................................
