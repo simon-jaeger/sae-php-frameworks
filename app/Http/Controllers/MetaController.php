@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\Util;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class MetaController extends Controller {
@@ -10,16 +11,27 @@ class MetaController extends Controller {
     return "pong";
   }
 
+  function debug() {
+    return 'debug stuff here';
+  }
+
   function now() {
-    return time();
+    return Carbon::now('Europe/Zurich')->toTimeString();
   }
 
   function echo(Request $request) {
-    $msg = $request->input('msg');
-    return $msg;
+    $input = $request->input('input');
+    return $input;
   }
 
-  function debug() {
-    return Util::PhpIni();
+  function reverse(Request $request) {
+    $input = $request->input('input');
+    return \Str::reverse($input);
+  }
+
+  function sum(Request $request) {
+    $input = $request->input('input');
+    $collection = collect($input);
+    return $collection->sum();
   }
 }
