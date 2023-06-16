@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Storage;
 
-class UploadsController extends Controller {
+class UploadsController {
   function read() {
     return Storage::get('file.txt');
   }

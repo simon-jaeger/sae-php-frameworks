@@ -1,6 +1,6 @@
 _type: export
 __export_format: 4
-__export_date: 2023-06-16T10:59:39.465Z
+__export_date: 2023-06-16T18:32:11.530Z
 __export_source: insomnia.desktop.app:v2023.2.0
 resources:
   - _id: req_96dc0d0112a84529a027430d450357e2
@@ -320,9 +320,9 @@ resources:
     _type: request
   - _id: req_41658fcff19b4ab5bb767e09768f8253
     parentId: fld_91b46f1c16d343fcaa3e2b414a36e716
-    modified: 1686911912623
+    modified: 1686939453807
     created: 1684589735246
-    url: "{{ _.baseUrl }}/users"
+    url: "{{ _.baseUrl }}/user"
     name: read
     description: ""
     method: GET
@@ -349,48 +349,19 @@ resources:
     _type: request
   - _id: fld_91b46f1c16d343fcaa3e2b414a36e716
     parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
-    modified: 1685695913046
+    modified: 1686939429217
     created: 1684589735238
-    name: users
+    name: user
     description: ""
     environment: {}
     environmentPropertyOrder: null
     metaSortKey: -1683970810482
     _type: request_group
-  - _id: req_1e1d43793ddc4bb98afae75f62a36d9e
-    parentId: fld_91b46f1c16d343fcaa3e2b414a36e716
-    modified: 1685695926005
-    created: 1685695923396
-    url: "{{ _.baseUrl }}/users/self"
-    name: self
-    description: ""
-    method: GET
-    body: {}
-    parameters: []
-    headers:
-      - id: pair_49ee99ab44a4417c92482d21119e39f7
-        name: Content-Type
-        value: application/json
-        description: ""
-      - id: pair_748de80fccde47d49be3e5c4f70747e9
-        name: X-Requested-With
-        value: XMLHttpRequest
-        description: ""
-    authentication: {}
-    metaSortKey: -1684324443837.1797
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
   - _id: req_d7bcee6530f545d69d7a818928d1fbc2
     parentId: fld_91b46f1c16d343fcaa3e2b414a36e716
-    modified: 1686910363507
+    modified: 1686939451384
     created: 1685461731994
-    url: "{{ _.baseUrl }}/users"
+    url: "{{ _.baseUrl }}/user"
     name: update
     description: ""
     method: PATCH
@@ -413,6 +384,37 @@ resources:
         description: ""
     authentication: {}
     metaSortKey: -1684324399105.9219
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_521cce76dc75450cb1a9fd52507ca4d5
+    parentId: fld_91b46f1c16d343fcaa3e2b414a36e716
+    modified: 1686939449310
+    created: 1686939441791
+    url: "{{ _.baseUrl }}/user"
+    name: delete
+    description: ""
+    method: DELETE
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - id: pair_49ee99ab44a4417c92482d21119e39f7
+        name: Content-Type
+        value: application/json
+        description: ""
+      - id: pair_748de80fccde47d49be3e5c4f70747e9
+        name: X-Requested-With
+        value: XMLHttpRequest
+        description: ""
+    authentication: {}
+    metaSortKey: -1684324354374.664
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
@@ -922,13 +924,13 @@ resources:
     _type: environment
   - _id: jar_4c61778f42f91623bc8c3bc6b2479dd1db01a515
     parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
-    modified: 1686913038264
+    modified: 1686939574852
     created: 1684321240589
     name: Default Jar
     cookies:
       - key: laravel_session
-        value: eyJpdiI6Ik9CTVRVZGNmcnI4dHdsbWNNdmtodmc9PSIsInZhbHVlIjoiUWY2S3J6UnVaOXZma2l4c09WR1h0ZjZhVGlVbVY5WXhSNjRVSHVxRHk2aDArYTFoNm9vSmlEZXZwWnIrK21kcjdscnNQM2dxM24raXhlOCsvWkJtQ1ZtNWZCb3NNVm9MMmNNN1hwNTd6d21HMFR3UUFidjZVbzZMNmxsWmg5TEIiLCJtYWMiOiJjMTE2ZWE5YTc2NDYwMDRmZDk0NDBlNTkwNmFlMzdmNTY4ZmRlMDljYjcxMTg3ZjA1NzUyNGZiOWVmYjI4ZGFhIiwidGFnIjoiIn0%3D
-        expires: 2023-06-17T10:57:18.000Z
+        value: eyJpdiI6IndaaDY3WHNjSmRqN0Jsa2IvMGM1N3c9PSIsInZhbHVlIjoiTk9jNUhRMmx4VVhaK0lBWjNaVXdFL3JyNXhycVMrb01XS2xZN0lrQnpTVXF6bGlUaXlQM1gySkFXWDdlS2NWZzI5THhTV0JQUlZuaEhCZVoyMGI5MVl2N0szMHFremVkdTY4VGQ5YytXaVMydGxzUE5naThPRE1HMlRLVGU3SkgiLCJtYWMiOiIxNDJkODhhYzVhYTE0NWIwYTkxYzQ3M2Y4OTc4MWRiOWZiYzA2MzA1MDlmYmJmZGQxODY3Y2QxMjk0MzU4MjkxIiwidGFnIjoiIn0%3D
+        expires: 2023-06-17T18:19:34.000Z
         maxAge: 86400
         domain: localhost
         path: /
@@ -937,8 +939,8 @@ resources:
           - samesite=lax
         hostOnly: true
         creation: 2023-05-20T14:18:51.629Z
-        lastAccessed: 2023-06-16T10:57:18.264Z
-        id: "1255410889214572"
+        lastAccessed: 2023-06-16T18:19:34.852Z
+        id: "02723179661727193"
     _type: cookie_jar
   - _id: spc_525102b2bb414a0e8c7d04c5e998a738
     parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1

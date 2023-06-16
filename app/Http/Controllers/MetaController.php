@@ -6,7 +6,7 @@ use App\Services\Util;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
-class MetaController extends Controller {
+class MetaController {
   function ping() {
     return "pong";
   }

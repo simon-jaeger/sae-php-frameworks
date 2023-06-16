@@ -6,7 +6,7 @@ use App\Models\Task;
 use Auth;
 use Illuminate\Http\Request;
 
-class TasksController extends Controller {
+class TasksController {
   function read(Request $request) {
     $query = Auth::user()->tasks();
     if ($request->has('sortBy')) {

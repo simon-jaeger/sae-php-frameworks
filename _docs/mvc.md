@@ -7,7 +7,7 @@ sequenceDiagram
     participant C as Controller
     participant M as Model
     participant D as Database
-    V ->> R: HTTP /controller/method
+    V ->> R: HTTP VERB /controller/method
     R ->> C: call
     C ->> M: call
     M ->> D: run SQL

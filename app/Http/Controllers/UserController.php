@@ -7,12 +7,8 @@ use Illuminate\Http\Request;
 use Auth;
 use Illuminate\Support\Facades\Hash;
 
-class UsersController extends Controller {
+class UserController {
   function read() {
-    return User::get();
-  }
-
-  function self() {
     return Auth::user();
   }
 
@@ -23,6 +19,12 @@ class UsersController extends Controller {
     if ($request->has('password'))
       $model->password = Hash::make($model->password);
     $model->save();
+    return $model;
+  }
+
+  function delete(Request $request) {
+    $model = Auth::user();
+    $model->delete();
     return $model;
   }
 }

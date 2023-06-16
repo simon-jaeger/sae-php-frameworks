@@ -22,7 +22,7 @@ composer run-script seed
 - intro
 - goal: backend for an office suite (like microsoft or google)
 - mvc: what and why?
-- os package manager
+- os package manager (if php/composer missing)
     - macos: https://brew.sh/
     - windows: https://scoop.sh/
 - php cli
@@ -67,9 +67,11 @@ composer run-script seed
 - E: pictures
 - T: create more media entitites (music, video, zips, fonts, ...)
 - ........................................
+- admin user and impersonation
 - helpers, collections, datetime/carbon, mail, ...
 - services (Util.php etc.)
 - ........................................
+- T: add a blog feature (public articles and comments)
 - T: add more features and ask questions
 - T: present your project to the class
 

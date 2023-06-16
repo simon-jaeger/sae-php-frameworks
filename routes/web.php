@@ -4,7 +4,7 @@ use App\Http\Controllers\UploadsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\NotesController;
-use App\Http\Controllers\UsersController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\MetaController;
 
 Route::get('/meta/ping', [MetaController::class, 'ping']);
@@ -20,9 +20,9 @@ Route::post('/auth/login', [AuthController::class, 'login']);
 Route::middleware('auth')->group(function () {
   Route::post('/auth/logout', [AuthController::class, 'logout']);
 
-  Route::get('/users', [UsersController::class, 'read']);
-  Route::get('/users/self', [UsersController::class, 'self']);
-  Route::patch('/users', [UsersController::class, 'update']);
+  Route::get('/user', [UserController::class, 'read']);
+  Route::patch('/user', [UserController::class, 'update']);
+  Route::delete('/user', [UserController::class, 'delete']);
 
   Route::get('/notes', [NotesController::class, 'read']);
   Route::post('/notes', [NotesController::class, 'create']);

@@ -6,7 +6,7 @@ use App\Models\Note;
 use Auth;
 use Illuminate\Http\Request;
 
-class NotesController extends Controller {
+class NotesController {
   function read(Request $request) {
     return Auth::user()->notes()->get();
   }

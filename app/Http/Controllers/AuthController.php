@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Auth;
 use Illuminate\Support\Facades\Hash;
 
-class AuthController extends Controller {
+class AuthController {
   function register(Request $request) {
     $payload = $request->validate(User::rules(isNew: true));
     $user = User::make($payload);
