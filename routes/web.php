@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\TasksController;
 use App\Http\Controllers\UploadsController;
 use Illuminate\Support\Facades\Route;
@@ -37,4 +38,7 @@ Route::middleware('auth')->group(function () {
   Route::get('/uploads', [UploadsController::class, 'read']);
   Route::post('/uploads', [UploadsController::class, 'create']);
   Route::delete('/uploads', [UploadsController::class, 'delete']);
+
+  Route::post('/admin/impersonate', [AdminController::class, 'impersonate']);
+  Route::post('/admin/unimpersonate', [AdminController::class, 'unimpersonate']);
 });

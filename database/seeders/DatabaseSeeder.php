@@ -6,18 +6,16 @@ use App\Models\Note;
 use App\Models\Task;
 use App\Models\User;
 use Illuminate\Database\Seeder;
-use Faker\Factory as Faker;
 use Hash;
 
 // faker: https://fakerphp.github.io/formatters/text-and-paragraphs/
 
 class DatabaseSeeder extends Seeder {
   function run() {
-    $faker = Faker::create();
-
     User::create([
       'email' => 'simon.sae@mailinator.com',
       'password' => Hash::make('pw'),
+      'is_admin' => true,
     ]);
 
     User::create([
@@ -25,20 +23,19 @@ class DatabaseSeeder extends Seeder {
       'password' => Hash::make('pw'),
     ]);
 
-    for ($i = 0; $i < 10; $i++) {
-      $userId = 1;
-      // $userId = $faker->numberBetween(1, 2);
+    for ($i = 0; $i < 20; $i++) {
+      $userId = $i < 10 ? 1 : 2;
 
       Note::create([
-        'title' => $faker->word(),
-        'content' => $faker->sentence(),
+        'title' => fake()->word(),
+        'content' => fake()->sentence(),
         'user_id' => $userId,
       ]);
 
       Task::create([
-        'name' => $faker->word(),
-        'done' => $faker->boolean(),
-        'prio' => $faker->numberBetween(1, 10),
+        'name' => fake()->word(),
+        'done' => fake()->boolean(),
+        'prio' => fake()->numberBetween(1, 10),
         'user_id' => $userId,
       ]);
     }
