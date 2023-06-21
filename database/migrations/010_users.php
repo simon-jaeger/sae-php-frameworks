@@ -9,7 +9,7 @@ return new class extends Migration {
   function up(): void {
     Schema::create(User::table(), function (Blueprint $table) {
       $table->id();
-      $table->string('email')->unique();
+      $table->string('email');
       $table->string('password');
       $table->boolean('is_admin')->default(false);
       $table->timestamps();

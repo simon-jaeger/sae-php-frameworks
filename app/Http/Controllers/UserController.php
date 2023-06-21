@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Auth;
 use Illuminate\Support\Facades\Hash;
 
-class UserController {
+class UserController extends Controller {
   function read() {
     return Auth::user();
   }
@@ -24,7 +24,16 @@ class UserController {
 
   function delete(Request $request) {
     $model = Auth::user();
+    $confirmed = Auth::validate([
+      'email' => $model->email,
+      'password' => $request->input('password'),
+    ]);
+    if (!$confirmed) {
+      return abort(401, 'password confirmation failed');
+    }
     $model->delete();
+    $model->notes()->delete();
+    $model->tasks()->delete();
     return $model;
   }
 }

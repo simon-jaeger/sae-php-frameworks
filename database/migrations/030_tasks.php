@@ -12,7 +12,7 @@ return new class extends Migration {
       $table->string('name');
       $table->boolean('done');
       $table->integer('prio');
-      $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+      $table->foreignId('user_id');
       $table->timestamps();
     });
   }
