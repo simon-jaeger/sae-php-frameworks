@@ -1,6 +1,6 @@
 _type: export
 __export_format: 4
-__export_date: 2023-06-20T15:09:31.791Z
+__export_date: 2023-06-21T15:10:48.184Z
 __export_source: insomnia.desktop.app:v2023.2.0
 resources:
   - _id: req_96dc0d0112a84529a027430d450357e2
@@ -395,7 +395,7 @@ resources:
     _type: request
   - _id: req_521cce76dc75450cb1a9fd52507ca4d5
     parentId: fld_91b46f1c16d343fcaa3e2b414a36e716
-    modified: 1686939449310
+    modified: 1687355393008
     created: 1686939441791
     url: "{{ _.baseUrl }}/user"
     name: delete
@@ -403,7 +403,10 @@ resources:
     method: DELETE
     body:
       mimeType: application/json
-      text: ""
+      text: |-
+        {
+        	"password": "pw"
+        }
     parameters: []
     headers:
       - id: pair_49ee99ab44a4417c92482d21119e39f7
@@ -998,13 +1001,13 @@ resources:
     _type: environment
   - _id: jar_4c61778f42f91623bc8c3bc6b2479dd1db01a515
     parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
-    modified: 1687273165943
+    modified: 1687359773808
     created: 1684321240589
     name: Default Jar
     cookies:
       - key: laravel_session
-        value: eyJpdiI6Iit6MlRuTmFzaStkeDNmN2lPOWJqV0E9PSIsInZhbHVlIjoiK04xNThTaUlFL1BZamEySEVwUFh5THdLc3FlbFN6cUtzNDV6S2w4UDdMMmN3U2RIbmFHYjNQNVpsNDRWU0JkOFp3YXRqSXdGR1lUQzdvZjVlUWlkU3BXNnFKalJvRHRSa1RnUmpZN0FZOVNGbXZsV1ZSbzViNzlkUDM4cHFoUmsiLCJtYWMiOiIzYmEyY2ZlZGQzZjUwYWU4ZTRlNmI3M2VjZjM3MWNjYmQ3M2UwODNlNmZhYTgzOWZlZmUzNDU5MWQwN2NhNTcyIiwidGFnIjoiIn0%3D
-        expires: 2023-06-21T14:59:25.000Z
+        value: eyJpdiI6InZwYWRHNTgva0VyU0NFSUVWUmpybWc9PSIsInZhbHVlIjoiNjRoSWdaZHQ3ek1HSUhXZjlPbVNjd25VTVNMdFFWc1FXbzIwZ2U0K1VXTEE4eEl5UytraFYxdmpERyttSTRjTmJBeE44VU5yVVVxbFNGNUxSdUVnbHM4MG5hQXlFbHg4bzUzQmtOdHZzYS9WOEpUcWZVWUMzRzJZTXd3M1NTTHoiLCJtYWMiOiJiN2NlMDI5MGY4ZGE0NWRiOGQ1NmFiMzZlNzI0MGM0ZjFiZTA0MmFmMzE1NTc0ZTIyZGY4MDA0OTA4MGI1NmY5IiwidGFnIjoiIn0%3D
+        expires: 2023-06-22T15:02:53.000Z
         maxAge: 86400
         domain: localhost
         path: /
@@ -1013,8 +1016,8 @@ resources:
           - samesite=lax
         hostOnly: true
         creation: 2023-05-20T14:18:51.629Z
-        lastAccessed: 2023-06-20T14:59:25.943Z
-        id: "2510667057662699"
+        lastAccessed: 2023-06-21T15:02:53.808Z
+        id: "7634840456128451"
     _type: cookie_jar
   - _id: spc_525102b2bb414a0e8c7d04c5e998a738
     parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
