@@ -1,6 +1,6 @@
 _type: export
 __export_format: 4
-__export_date: 2023-06-21T15:10:48.184Z
+__export_date: 2023-06-22T12:58:51.996Z
 __export_source: insomnia.desktop.app:v2023.2.0
 resources:
   - _id: req_96dc0d0112a84529a027430d450357e2
@@ -256,7 +256,7 @@ resources:
     _type: request_group
   - _id: req_f7d66ebdacb84d43981f756fd4d8fc19
     parentId: fld_9675a480663d481e871c53f7f26ea09c
-    modified: 1687272069474
+    modified: 1687437662359
     created: 1684589785058
     url: "{{ _.baseUrl }}/auth/login"
     name: login
@@ -745,48 +745,18 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
-  - _id: req_bbf0469d354446758229da724335cf12
-    parentId: fld_a452142c01604deaae75cc2d392f6cf9
-    modified: 1686911927538
-    created: 1686911153483
-    url: "{{ _.baseUrl }}/uploads"
+  - _id: req_245f047fe1da4558a94ed02d45a73f44
+    parentId: fld_ef847f3bf5d845d39bdb15b4ebd931e5
+    modified: 1687436576687
+    created: 1687434838047
+    url: "{{ _.baseUrl }}/pictures"
     name: read
     description: ""
     method: GET
     body:
       mimeType: application/json
       text: ""
-    parameters:
-      - id: pair_67370fcc01204a5aabcf500281827f29
-        name: sortBy
-        value: prio
-        description: ""
-        disabled: false
-      - id: pair_511532e6f9db4666839f25a0c7353dd2
-        name: sortDir
-        value: asc
-        description: ""
-        disabled: true
-      - id: pair_07d3e8af8b7f48819d876bbee713a447
-        name: done
-        value: "false"
-        description: ""
-        disabled: false
-      - id: pair_5335d000d9214281a52bd998bba133ae
-        name: prio
-        value: "5"
-        description: ""
-        disabled: true
-      - id: pair_6800b182f974491ebbd2be1cefa9b039
-        name: prioOperator
-        value: ">"
-        description: ""
-        disabled: true
-      - id: pair_c0ca7981c29e479b81ca22af65777fd9
-        name: name
-        value: "%a%"
-        description: ""
-        disabled: true
+    parameters: []
     headers:
       - id: pair_49ee99ab44a4417c92482d21119e39f7
         name: Content-Type
@@ -806,33 +776,71 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
-  - _id: fld_a452142c01604deaae75cc2d392f6cf9
+  - _id: fld_ef847f3bf5d845d39bdb15b4ebd931e5
     parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
-    modified: 1686911153475
-    created: 1686911153475
-    name: uploads
+    modified: 1687434838042
+    created: 1687434838042
+    name: pictures
     description: ""
     environment: {}
     environmentPropertyOrder: null
-    metaSortKey: -1683707433698.5
+    metaSortKey: -1683685485637.375
     _type: request_group
-  - _id: req_426d8a732725444fb93f1fd64e56515f
-    parentId: fld_a452142c01604deaae75cc2d392f6cf9
-    modified: 1686911239384
-    created: 1686911153479
-    url: "{{ _.baseUrl }}/uploads"
+  - _id: req_3ae8cb5d090d49bdab99458eca1d0288
+    parentId: fld_ef847f3bf5d845d39bdb15b4ebd931e5
+    modified: 1687437671980
+    created: 1687436693218
+    url: "{{ _.baseUrl }}/pictures/1"
+    name: show
+    description: ""
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    parameters: []
+    headers:
+      - id: pair_49ee99ab44a4417c92482d21119e39f7
+        name: Content-Type
+        value: application/json
+        description: ""
+      - id: pair_748de80fccde47d49be3e5c4f70747e9
+        name: X-Requested-With
+        value: XMLHttpRequest
+        description: ""
+    authentication: {}
+    metaSortKey: -1684324443837.1797
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_58f670df23284b04a047a8aa0451f7b0
+    parentId: fld_ef847f3bf5d845d39bdb15b4ebd931e5
+    modified: 1687437648860
+    created: 1687434838044
+    url: "{{ _.baseUrl }}/pictures"
     name: create
     description: ""
     method: POST
     body:
-      mimeType: application/json
-      text: |-
-        {
-        }
+      mimeType: multipart/form-data
+      params:
+        - name: title
+          value: foobar
+          id: pair_bca1d53f39ab416a934d5bf3a4b9fbf1
+        - id: pair_b25cd58b7100480da743baafb978731b
+          name: file
+          value: ""
+          description: ""
+          type: file
+          fileName: /Users/simon/home/google-drive/media/images/avatars/lego-2.jpg
     parameters: []
     headers:
       - name: Content-Type
-        value: application/json
+        value: multipart/form-data
         id: pair_a16a4920cc514fed9153355529310b3c
       - id: pair_726db1ec690645baa45ee8beae85607c
         name: X-Requested-With
@@ -848,43 +856,11 @@ resources:
     settingRebuildPath: true
     settingFollowRedirects: global
     _type: request
-  - _id: req_36f65ccaea424e718d11e7dd949641f2
-    parentId: fld_a452142c01604deaae75cc2d392f6cf9
-    modified: 1686912195279
-    created: 1686911153488
-    url: "{{ _.baseUrl }}/uploads"
-    name: update
-    description: ""
-    method: PATCH
-    body:
-      mimeType: application/json
-      text: |-
-        {
-        }
-    parameters: []
-    headers:
-      - name: Content-Type
-        value: application/json
-        id: pair_a16a4920cc514fed9153355529310b3c
-      - id: pair_726db1ec690645baa45ee8beae85607c
-        name: X-Requested-With
-        value: XMLHttpRequest
-        description: ""
-    authentication: {}
-    metaSortKey: -1684324130718.375
-    isPrivate: false
-    settingStoreCookies: true
-    settingSendCookies: true
-    settingDisableRenderRequestBody: false
-    settingEncodeUrl: true
-    settingRebuildPath: true
-    settingFollowRedirects: global
-    _type: request
-  - _id: req_c273bd287c8c430f85f4cf9a8724124c
-    parentId: fld_a452142c01604deaae75cc2d392f6cf9
-    modified: 1686912191261
-    created: 1686911153485
-    url: "{{ _.baseUrl }}/uploads"
+  - _id: req_9f50ace9378444af9e9f7fce50038b6a
+    parentId: fld_ef847f3bf5d845d39bdb15b4ebd931e5
+    modified: 1687436436610
+    created: 1687434838048
+    url: "{{ _.baseUrl }}/pictures"
     name: delete
     description: ""
     method: DELETE
@@ -892,6 +868,7 @@ resources:
       mimeType: application/json
       text: |-
         {
+        	"id": 2
         }
     parameters: []
     headers:
@@ -1001,13 +978,13 @@ resources:
     _type: environment
   - _id: jar_4c61778f42f91623bc8c3bc6b2479dd1db01a515
     parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
-    modified: 1687359773808
+    modified: 1687438626202
     created: 1684321240589
     name: Default Jar
     cookies:
       - key: laravel_session
-        value: eyJpdiI6InZwYWRHNTgva0VyU0NFSUVWUmpybWc9PSIsInZhbHVlIjoiNjRoSWdaZHQ3ek1HSUhXZjlPbVNjd25VTVNMdFFWc1FXbzIwZ2U0K1VXTEE4eEl5UytraFYxdmpERyttSTRjTmJBeE44VU5yVVVxbFNGNUxSdUVnbHM4MG5hQXlFbHg4bzUzQmtOdHZzYS9WOEpUcWZVWUMzRzJZTXd3M1NTTHoiLCJtYWMiOiJiN2NlMDI5MGY4ZGE0NWRiOGQ1NmFiMzZlNzI0MGM0ZjFiZTA0MmFmMzE1NTc0ZTIyZGY4MDA0OTA4MGI1NmY5IiwidGFnIjoiIn0%3D
-        expires: 2023-06-22T15:02:53.000Z
+        value: eyJpdiI6Ikd4NkpQR05SYXNTVHQrWllCaTdTcHc9PSIsInZhbHVlIjoiYmNnNkpvMGk2RjgwNmQvaW04UlhxSmZrelY1UmE1K1djWWNMcnVuY05pVTduejN3dUQ5Kyt5Y2pJWVVOV2VkcmR1TFNpeWxmYXhKbUZrZUtkbHB1WnBURVc0UzhrRmFXVmhNbGhNbGNrbHkxYWVzZ3NrYlRUYUdtNnVYbFlUZGEiLCJtYWMiOiI2YjIzMjUzZGI3NjFlNTRhNTJmODAzZDA1ZGZmODJjODQxNmRhMDU3ODZlZGZhMDJjZDc2MDhlYTQ0NDhjMWRjIiwidGFnIjoiIn0%3D
+        expires: 2023-06-23T12:57:06.000Z
         maxAge: 86400
         domain: localhost
         path: /
@@ -1016,8 +993,8 @@ resources:
           - samesite=lax
         hostOnly: true
         creation: 2023-05-20T14:18:51.629Z
-        lastAccessed: 2023-06-21T15:02:53.808Z
-        id: "7634840456128451"
+        lastAccessed: 2023-06-22T12:57:06.201Z
+        id: "8803971518683336"
     _type: cookie_jar
   - _id: spc_525102b2bb414a0e8c7d04c5e998a738
     parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
