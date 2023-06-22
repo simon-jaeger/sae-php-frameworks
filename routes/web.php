@@ -1,8 +1,8 @@
 <?php
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\TasksController;
-use App\Http\Controllers\UploadsController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PicturesController;
+use App\Http\Controllers\TasksController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\NotesController;
 use App\Http\Controllers\UserController;
@@ -35,9 +35,10 @@ Route::middleware('auth')->group(function () {
   Route::patch('/tasks', [TasksController::class, 'update']);
   Route::delete('/tasks', [TasksController::class, 'delete']);
 
-  Route::get('/uploads', [UploadsController::class, 'read']);
-  Route::post('/uploads', [UploadsController::class, 'create']);
-  Route::delete('/uploads', [UploadsController::class, 'delete']);
+  Route::get('/pictures', [PicturesController::class, 'read']);
+  Route::get('/pictures/{id}', [PicturesController::class, 'show']);
+  Route::post('/pictures', [PicturesController::class, 'create']);
+  Route::delete('/pictures', [PicturesController::class, 'delete']);
 
   Route::post('/admin/impersonate', [AdminController::class, 'impersonate']);
   Route::post('/admin/unimpersonate', [AdminController::class, 'unimpersonate']);

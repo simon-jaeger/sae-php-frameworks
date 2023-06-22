@@ -6,6 +6,7 @@ namespace App\Models;
  * @property string $name
  * @property boolean $done
  * @property numeric $prio
+ * @property numeric $user_id
  */
 class Task extends Model {
   static $rules = [
