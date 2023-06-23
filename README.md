@@ -20,14 +20,14 @@ composer run-script seed
 ## outline
 
 - intro
-- goal: backend for an office suite (like microsoft or google)
-- mvc: what and why?
+- why php: recorder vs clarinet
+- php cli
+- composer
 - os package manager (if php/composer missing)
     - macos: https://brew.sh/
     - windows: https://scoop.sh/
-- php cli
-- composer
-- laravel
+- software architecture and mvc: what and why?
+- laravel: a php framework
 - T: install everything, setup starter project
 - ........................................
 - api: what are headless backends?
