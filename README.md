@@ -20,7 +20,6 @@ composer run-script seed
 ## outline
 
 - intro
-- why php: recorder vs clarinet
 - php cli
 - composer
 - os package manager (if php/composer missing)
