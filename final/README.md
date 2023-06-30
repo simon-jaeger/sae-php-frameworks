@@ -25,26 +25,27 @@ composer run-script seed
 - os package manager (if php/composer missing)
     - macos: https://brew.sh/
     - windows: https://scoop.sh/
-- software architecture and mvc: what and why?
+- software architecture: what and why?
+- api: what are headless backends? (https://jsonplaceholder.typicode.com)
+- api client: https://insomnia.rest/
 - laravel: a php framework
 - T: install everything, setup starter project
 - ........................................
-- api: what are headless backends?
-- routing (GET /ping)
-- api client: https://insomnia.rest/
-- controllers
+- routing (GET /meta/ping)
 - endpoints (VERB /controller/method)
+- controllers
 - http request body (params)
 - http response (return value)
-- E: meta controller
-- T: create more meta endpoints (echo, reverse, whoami, ...)
+- E: meta controller (ping, echo)
+- T: create more meta endpoints (reverse, sum, ...)
 - ........................................
 - sqlite
 - models
 - migrations
+- artisan (php artisan migrate:fresh)
 - crud (restful controller methods)
 - E: notes (crud)
-- T: create more crudable entities (contacts, recipes, pokemon, ...)
+- T: create more crudable entities (contacts, recipes, ...)
 - ........................................
 - seeding/faker
 - validation
