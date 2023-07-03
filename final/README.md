@@ -1,6 +1,6 @@
 # sae: php frameworks
 
-duration: 11 * 3h
+duration: 11 * 3h (maybe more, request from martin)
 
 learn about mvc, rest and the laravel framework.
 
@@ -22,7 +22,7 @@ composer run-script seed
 - intro
 - php cli
 - composer
-- os package manager (if php/composer missing)
+- os package manager (if php 8.1/composer missing)
     - macos: https://brew.sh/
     - windows: https://scoop.sh/
 - software architecture: what and why?

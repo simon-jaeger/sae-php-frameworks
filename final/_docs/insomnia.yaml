@@ -1,8 +1,76 @@
 _type: export
 __export_format: 4
-__export_date: 2023-06-22T12:58:51.996Z
-__export_source: insomnia.desktop.app:v2023.2.0
+__export_date: 2023-07-03T20:07:34.459Z
+__export_source: insomnia.desktop.app:v2023.2.1
 resources:
+  - _id: req_9f35f2faddb34ad2a23c241ef5abfe9c
+    parentId: fld_eaa0061bca1e4481ad735eb6e11f5f1a
+    modified: 1688130405537
+    created: 1688130268916
+    url: https://jsonplaceholder.typicode.com/posts
+    name: ""
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1688130303531.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_eaa0061bca1e4481ad735eb6e11f5f1a
+    parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
+    modified: 1688130259180
+    created: 1688130232449
+    name: json-placeholder
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1688130232449
+    _type: request_group
+  - _id: wrk_a88f9fb4df484eb28cb77579b4e283b1
+    parentId: null
+    modified: 1684321240585
+    created: 1684321240585
+    name: laravel
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_aba3cd334f234d35a155687a1ec7d5a6
+    parentId: fld_eaa0061bca1e4481ad735eb6e11f5f1a
+    modified: 1688130431117
+    created: 1688130345990
+    url: https://jsonplaceholder.typicode.com/posts
+    name: ""
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"title": "test",
+        	"body": "lorem ipsum"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1688130303481.5
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
   - _id: req_96dc0d0112a84529a027430d450357e2
     parentId: fld_25b02e5485214b24b9248decf8508836
     modified: 1684583666524
@@ -42,14 +110,6 @@ resources:
     environmentPropertyOrder: null
     metaSortKey: -1684321979560
     _type: request_group
-  - _id: wrk_a88f9fb4df484eb28cb77579b4e283b1
-    parentId: null
-    modified: 1684321240585
-    created: 1684321240585
-    name: laravel
-    description: ""
-    scope: collection
-    _type: workspace
   - _id: req_dd1f7cfc4c4d4d02b0802051086c98a7
     parentId: fld_25b02e5485214b24b9248decf8508836
     modified: 1685025624472
@@ -144,7 +204,7 @@ resources:
     _type: request
   - _id: req_50e9ea59eda44583ba2f7282ed7123ea
     parentId: fld_25b02e5485214b24b9248decf8508836
-    modified: 1686912371877
+    modified: 1688134303179
     created: 1686908423290
     url: "{{ _.baseUrl }}/meta/reverse"
     name: reverse
@@ -178,7 +238,7 @@ resources:
     _type: request
   - _id: req_17e1dbc819f24864bee035115b2cfc57
     parentId: fld_25b02e5485214b24b9248decf8508836
-    modified: 1686913026617
+    modified: 1688134400608
     created: 1686912432153
     url: "{{ _.baseUrl }}/meta/sum"
     name: sum
@@ -202,6 +262,75 @@ resources:
         description: ""
     authentication: {}
     metaSortKey: -1683911598052.6875
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_9b609fa455e14b23b86a2291b50823e3
+    parentId: fld_25b02e5485214b24b9248decf8508836
+    modified: 1688136210872
+    created: 1688136142677
+    url: "{{ _.baseUrl }}/meta/fahrenheit"
+    name: fahrenheit
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"celsius": 100
+        }
+    parameters: []
+    headers:
+      - id: pair_ebee4c6f9ab948378aff1632cf3a2b1f
+        name: Content-Type
+        value: application/json
+        description: ""
+      - id: pair_654ee3d8f7334607b70e1415b7de667b
+        name: X-Requested-With
+        value: XMLHttpRequest
+        description: ""
+    authentication: {}
+    metaSortKey: -1683897918533.8438
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_64862d9bc85146f6a04873824f4e4764
+    parentId: fld_25b02e5485214b24b9248decf8508836
+    modified: 1688136434733
+    created: 1688136408137
+    url: "{{ _.baseUrl }}/meta/pythagoras"
+    name: pythagoras
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"a": 10,
+        	"b": 20
+        }
+    parameters: []
+    headers:
+      - id: pair_ebee4c6f9ab948378aff1632cf3a2b1f
+        name: Content-Type
+        value: application/json
+        description: ""
+      - id: pair_654ee3d8f7334607b70e1415b7de667b
+        name: X-Requested-With
+        value: XMLHttpRequest
+        description: ""
+    authentication: {}
+    metaSortKey: -1683891078774.4219
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
@@ -978,13 +1107,13 @@ resources:
     _type: environment
   - _id: jar_4c61778f42f91623bc8c3bc6b2479dd1db01a515
     parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
-    modified: 1687438626202
+    modified: 1688136435804
     created: 1684321240589
     name: Default Jar
     cookies:
       - key: laravel_session
-        value: eyJpdiI6Ikd4NkpQR05SYXNTVHQrWllCaTdTcHc9PSIsInZhbHVlIjoiYmNnNkpvMGk2RjgwNmQvaW04UlhxSmZrelY1UmE1K1djWWNMcnVuY05pVTduejN3dUQ5Kyt5Y2pJWVVOV2VkcmR1TFNpeWxmYXhKbUZrZUtkbHB1WnBURVc0UzhrRmFXVmhNbGhNbGNrbHkxYWVzZ3NrYlRUYUdtNnVYbFlUZGEiLCJtYWMiOiI2YjIzMjUzZGI3NjFlNTRhNTJmODAzZDA1ZGZmODJjODQxNmRhMDU3ODZlZGZhMDJjZDc2MDhlYTQ0NDhjMWRjIiwidGFnIjoiIn0%3D
-        expires: 2023-06-23T12:57:06.000Z
+        value: eyJpdiI6IlZWN3IvdDJZUXhSV0RLUExHMjhyN3c9PSIsInZhbHVlIjoiOWZLWkxNRG5SSktya1dKN1ZleWQxdnRpbkJxK2x4MGF6dmptb0hqd213a0lnUVRwcW1TK2VnY1BzY0VQQzVvb0dVTGFxb1Fvc2haUFphcFRwOGJJRmVseTdQckdlQjkvTzM3Ry9Cc2ttZGRXVi9RVWR2STRLNFJaekk2ZUZpWWciLCJtYWMiOiJjOTQ4OTQ5ZGY0MDNhOWM3MDFlZWM1MjdjMzMwZTFhZTM5ZTNhY2I1ZDRhYzZmZjA2ZTY3NDdiMTkyNmUxOTI2IiwidGFnIjoiIn0%3D
+        expires: 2023-07-01T14:47:15.000Z
         maxAge: 86400
         domain: localhost
         path: /
@@ -993,8 +1122,8 @@ resources:
           - samesite=lax
         hostOnly: true
         creation: 2023-05-20T14:18:51.629Z
-        lastAccessed: 2023-06-22T12:57:06.201Z
-        id: "8803971518683336"
+        lastAccessed: 2023-06-30T14:47:15.804Z
+        id: "935520596140772"
     _type: cookie_jar
   - _id: spc_525102b2bb414a0e8c7d04c5e998a738
     parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
