@@ -38,7 +38,10 @@
     }
   },
   "scripts": {
-    "serve": "php -d max_execution_time=0 artisan serve",
+    "serve": [
+      "Composer\\Config::disableProcessTimeout",
+      "touch ./database/database.sqlite && php -d max_execution_time=0 artisan serve"
+    ],
     "seed": " touch ./database/database.sqlite && php artisan migrate:fresh --seed",
     "post-autoload-dump": [
       "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
