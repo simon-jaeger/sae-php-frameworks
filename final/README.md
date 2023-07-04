@@ -39,12 +39,13 @@ composer run-script seed
 - E: meta controller (ping, echo)
 - T: create more meta endpoints (reverse, sum, ...)
 - ........................................
-- sqlite
-- models
+- sqlite (https://marketplace.visualstudio.com/items?itemName=qwtel.sqlite-viewer)
+- models (properties + make, save, create, all, find, delete, ...)
 - migrations
 - artisan (php artisan migrate:fresh)
 - crud (restful controller methods)
 - E: notes (crud)
+- T: add more fields to the note entity (string $color, boolean $hidden, integer $importance, ...)
 - T: create more crudable entities (contacts, recipes, ...)
 - ........................................
 - seeding/faker

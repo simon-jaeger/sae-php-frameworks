@@ -4,7 +4,7 @@
 
 ## router
 
-handle http request, delegate to controllers
+handle http requests, delegate to controllers
 
 ## controller
 
@@ -20,4 +20,4 @@ persistency via save() method (or automatically on create())
 ## migrations
 
 php scripts that create db tables.
-easily recreate database on other computers.
+easily recreate database, even on other computers.

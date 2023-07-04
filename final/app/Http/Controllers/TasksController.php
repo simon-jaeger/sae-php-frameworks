@@ -15,7 +15,7 @@ class TasksController {
       $query->orderBy($sortBy, $sortDir);
     }
     if ($request->has('done')) {
-      $done = $request->boolean('done');
+      $done = $request->boolean('done'); // or just ->input()?
       $query->where('done', '=', $done);
     }
     if ($request->has('prio')) {
