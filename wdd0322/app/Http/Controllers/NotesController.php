@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class NotesController {
   function read(Request $request) {
-    $models = Note::all();
+    return Note::all();
   }
 
   function create(Request $request) {
