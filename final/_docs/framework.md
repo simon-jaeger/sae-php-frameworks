@@ -2,7 +2,7 @@
 
 a blueprint for a software architecture (like mvc).
 
-- file and folder structure
+- predefined file and folder structure
 - predefined classes that solve common problems
     - Router (direct http requests) 
     - Utils (Str::rev() etc.)
@@ -10,5 +10,6 @@ a blueprint for a software architecture (like mvc).
     - File storage
     - Authentification
     - ...
-- scripts (running a dev server, filling the db with dummy data, ...)
-- security (cors, xss, sql injection, ...)
+- helpter scripts (running a dev server, filling the db with dummy data, ...)
+- debug helper (better error handling, logging, ...)
+- automatic security (cors, xss, sql injection, ...)

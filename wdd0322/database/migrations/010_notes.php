@@ -11,9 +11,6 @@ return new class extends Migration {
       $table->id();
       $table->string('title');
       $table->text('content');
-      $table->string('color');
-      $table->boolean('hidden');
-      $table->integer('importance');
       $table->timestamps();
     });
   }
