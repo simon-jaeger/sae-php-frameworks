@@ -15,7 +15,3 @@ Route::get('/notes', [NotesController::class, 'read']);
 Route::post('/notes', [NotesController::class, 'create']);
 Route::patch('/notes', [NotesController::class, 'update']);
 Route::delete('/notes', [NotesController::class, 'delete']);
-
-
-//$controller = new NotesController();
-//$controller->read();

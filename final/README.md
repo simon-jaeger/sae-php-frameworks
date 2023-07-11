@@ -49,6 +49,8 @@ composer run-script seed
 - T: create more crudable entities (contacts, recipes, ...)
 - ........................................
 - seeding/faker
+- headers (X-Requested-With, ...)
+- http codes (200, 403, 404, 500, ...) (abort, findOrFail, ...)
 - validation
 - E: notes (seed, validate)
 - T: add seeding and validation to your entities
@@ -77,4 +79,10 @@ composer run-script seed
 - T: add a blog feature (public articles and comments)
 - T: add more features and ask questions
 - T: present your project to the class
+
+## extra tasks
+
+- #1: add a color field to notes (hex notation). if request has no color input, set a random gray color.
+- #2: add a summary field  to notes. automatically set it to the first 10 characters of the content followed by three dots (...) when a note is created
+- #3: add a locked field to notes. when trying to delete a note where locked is true, do not delete it and instead return a message 'cannot delete locked note'
 

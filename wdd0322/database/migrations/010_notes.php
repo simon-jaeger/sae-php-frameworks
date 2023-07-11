@@ -11,6 +11,9 @@ return new class extends Migration {
       $table->id();
       $table->string('title');
       $table->text('content');
+      $table->string('color');
+      $table->string('summary');
+      $table->boolean('locked')->default(false);
       $table->timestamps();
     });
   }
