@@ -1,6 +1,6 @@
 # sae: php frameworks
 
-duration: 11 * 3h (maybe more, request from martin)
+duration: 13 * 3h
 
 learn about mvc, rest and the laravel framework.
 
