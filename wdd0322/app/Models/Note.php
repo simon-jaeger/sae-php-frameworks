@@ -17,8 +17,8 @@ class Note extends Model {
     return $request->validate([
       'title' => ['required', 'max:100', 'min:3'],
       'content' => [$requiredIfnew],
-      'color' => ['optional'],
-      'locked' => ['optional'],
+      'color' => ['sometimes'],
+      'locked' => ['sometimes'],
     ]);
   }
 }
