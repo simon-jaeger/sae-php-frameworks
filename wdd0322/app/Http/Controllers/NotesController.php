@@ -11,12 +11,7 @@ class NotesController {
   }
 
   function create(Request $request) {
-    $payload = $request->validate([
-      'title' => ['required', 'max:100', 'min:2'],
-      'content' => ['required'],
-      'color' => ['optional'],
-      'locked' => ['optional'],
-    ]);
+    $payload = Note::validate($request, isNew: true);
     $model = Note::make($payload);
     if (!$model->color) {
       $hex = dechex(mt_rand(0, 15));
@@ -28,13 +23,10 @@ class NotesController {
   }
 
   function update(Request $request) {
-    // TODO: validate
     $id = $request->input('id');
-    $title = $request->input('title');
-    $content = $request->input('content');
+    $payload = Note::validate($request);
     $model = Note::findOrFail($id);
-    $model->title = $title;
-    $model->content = $content;
+    $model->fill($payload);
     $model->save();
     return $model;
   }
