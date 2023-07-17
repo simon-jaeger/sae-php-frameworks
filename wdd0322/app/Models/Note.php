@@ -13,12 +13,12 @@ use Illuminate\Http\Request;
  */
 class Note extends Model {
   static function validate(Request $request, $isNew = false) {
-    $requiredIfnew = $isNew ? 'required' : 'optional';
+    $requiredIfnew = $isNew ? 'required' : 'sometimes';
     return $request->validate([
       'title' => ['required', 'max:100', 'min:3'],
       'content' => [$requiredIfnew],
       'color' => ['sometimes'],
-      'locked' => ['sometimes'],
+      'locked' => ['sometimes', 'boolean'],
     ]);
   }
 }

@@ -13,27 +13,22 @@ class UserController {
   }
 
   function update(Request $request) {
-    $model = Auth::user();
+    $user = Auth::user();
     $payload = $request->validate(User::rules());
-    $model->fill($payload);
+    $user->fill($payload);
     if ($request->has('password'))
-      $model->password = Hash::make($model->password);
-    $model->save();
-    return $model;
+      $user->password = Hash::make($user->password);
+    $user->save();
+    return $user;
   }
 
   function delete(Request $request) {
-    $model = Auth::user();
-    $confirmed = Auth::validate([
-      'email' => $model->email,
-      'password' => $request->input('password'),
-    ]);
-    if (!$confirmed) {
-      return abort(401, 'password confirmation failed');
-    }
-    $model->delete();
-    $model->notes()->delete();
-    $model->tasks()->delete();
-    return $model;
+    $user = Auth::user();
+    $user->delete();
+    $user->notes()->delete();
+    $user->tasks()->delete();
+    if ($user->isImpersonated()) $user->leaveImpersonation();
+    else Auth::logout();
+    return $user;
   }
 }
