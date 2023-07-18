@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Http\Request;
 use Lab404\Impersonate\Models\Impersonate;
 
 /**
@@ -16,12 +17,12 @@ class User extends Model implements AuthenticatableContract {
 
   protected $hidden = ['password'];
 
-  static function rules($isNew = false) {
+  static function validate(Request $request, $isNew = false) {
     $requiredIfNew = $isNew ? 'required' : 'sometimes';
-    return [
+    return $request->validate([
       'email' => [$requiredIfNew, 'email'],
       'password' => [$requiredIfNew, 'min:8'],
-    ];
+    ]);
   }
 
   function notes() {

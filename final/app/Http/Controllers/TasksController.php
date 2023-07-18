@@ -15,7 +15,7 @@ class TasksController {
       $query->orderBy($sortBy, $sortDir);
     }
     if ($request->has('done')) {
-      $done = $request->boolean('done'); // or just ->input()?
+      $done = $request->input('done');
       $query->where('done', '=', $done);
     }
     if ($request->has('prio')) {
@@ -31,14 +31,14 @@ class TasksController {
   }
 
   function create(Request $request) {
-    $payload = $request->validate(Task::$rules);
+    $payload = Task::validate($request, isNew: true);
     $model = Auth::user()->tasks()->create($payload);
     return $model;
   }
 
   function update(Request $request) {
     $id = $request->input('id');
-    $payload = $request->validate(Task::$rules);
+    $payload = Task::validate($request);
     $model = Auth::user()->tasks()->findOrFail($id);
     $model->fill($payload);
     $model->save();

@@ -2,14 +2,16 @@
 
 namespace App\Models;
 
+use Illuminate\Http\Request;
+
 /**
- * @property string $title
  * @property string $file
  * @property numeric $user_id
  */
 class Picture extends Model {
-  static $rules = [
-    'title' => ['required', 'max:255'],
-    'file' => ['required', 'image'],
-  ];
+  static function validate(Request $request) {
+    return $request->validate([
+      'file' => ['required', 'image'],
+    ]);
+  }
 }

@@ -20,7 +20,7 @@ class PicturesController {
   }
 
   function create(Request $request) {
-    $payload = $request->validate(Picture::$rules);
+    $payload = Picture::validate($request);
     $file = $request->file('file');
     $model = Auth::user()->pictures()->make($payload);
     $model->file = Storage::putFile($file);

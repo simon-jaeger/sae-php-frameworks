@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController {
   function register(Request $request) {
-    $payload = $request->validate(User::rules(isNew: true));
+    $payload = User::validate($request, isNew: true);
     $user = User::make($payload);
     $user->password = Hash::make($user->password);
     $user->save();

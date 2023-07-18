@@ -12,14 +12,14 @@ class NotesController {
   }
 
   function create(Request $request) {
-    $payload = $request->validate(Note::$rules);
+    $payload = Note::validate($request, isNew: true);
     $model = Auth::user()->notes()->create($payload);
     return $model;
   }
 
   function update(Request $request) {
     $id = $request->input('id');
-    $payload = $request->validate(Note::$rules);
+    $payload = Note::validate($request);
     $model = Auth::user()->notes()->findOrFail($id);
     $model->fill($payload);
     $model->save();

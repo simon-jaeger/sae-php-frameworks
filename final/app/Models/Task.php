@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use Illuminate\Http\Request;
+
 /**
  * @property string $name
  * @property boolean $done
@@ -9,9 +11,12 @@ namespace App\Models;
  * @property numeric $user_id
  */
 class Task extends Model {
-  static $rules = [
-    'name' => ['required', 'max:255'],
-    'done' => ['required', 'boolean'],
-    'prio' => ['required', 'numeric', 'min:1', 'max:10'],
-  ];
+  static function validate(Request $request, $isNew = false) {
+    $requiredIfnew = $isNew ? 'required' : 'sometimes';
+    return $request->validate([
+      'name' => [$requiredIfnew, 'max:255'],
+      'done' => ['sometimes', 'boolean'],
+      'prio' => ['sometimes', 'numeric', 'min:1', 'max:10'],
+    ]);
+  }
 }
