@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Demo\solution;
+namespace App\Demo;
 
 class Actor {
   public $x = 0;

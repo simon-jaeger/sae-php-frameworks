@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Demo\solution;
+namespace App\Demo;
 
 class Hero extends Actor {
   use Fightable;
-
-  public $name = '???';
+  public $name = '...';
 }

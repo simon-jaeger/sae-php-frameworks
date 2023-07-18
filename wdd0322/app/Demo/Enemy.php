@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Demo\solution;
+namespace App\Demo;
 
 class Enemy extends Actor {
   use Fightable;
