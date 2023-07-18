@@ -4,7 +4,7 @@ namespace App\Demo;
 
 trait Fightable {
   public $hp = 5;
-  public $atk = 2;
+  public $atk = 1;
 
   function attack($target) {
     if (+$target->hp <= 0) return 'already defeated';
