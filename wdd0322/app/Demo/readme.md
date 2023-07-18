@@ -1,9 +1,16 @@
 # oop demo area
 
 let's review oop by creating classes for three different actors of a little
-game:
+game and playing around with them in tinker:
 
 <img src="./game.png" style="width:100%; image-rendering: pixelated;" alt="">
+
+when adding new namespaces, don't forget to run this command to make them
+available in your code:
+
+```sh
+composer dump-autoload
+```
 
 ## further reading
 
