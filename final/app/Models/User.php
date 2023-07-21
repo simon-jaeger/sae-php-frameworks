@@ -27,6 +27,10 @@ class User extends BaseUser {
     return $this->hasMany(Task::class);
   }
 
+  function teams() {
+    return $this->belongsToMany(Team::class);
+  }
+
   function pictures() {
     return $this->hasMany(Picture::class);
   }

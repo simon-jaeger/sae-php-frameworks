@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Note;
+use App\Models\Team;
 use App\Models\Task;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -12,31 +13,44 @@ use Hash;
 
 class DatabaseSeeder extends Seeder {
   function run() {
-    User::create([
+    $userA = User::create([
       'email' => 'simon.sae@mailinator.com',
       'password' => Hash::make('pw'),
       'is_admin' => true,
     ]);
 
-    User::create([
+    $userB = User::create([
       'email' => 'other.sae@mailinator.com',
       'password' => Hash::make('pw'),
     ]);
 
-    for ($i = 0; $i < 20; $i++) {
-      $userId = $i < 10 ? 1 : 2;
+    // fixed teams
+    $teamA = Team::create([
+      'name' => 'alpha',
+    ]);
 
-      Note::create([
+    $teamB = Team::create([
+      'name' => 'bravo',
+    ]);
+
+    $teamC = Team::create([
+      'name' => 'charlie',
+    ]);
+
+//    $userA->teams()->attach($teamA->id);
+//    $userB->teams()->attach([$teamB->id, $teamC->id]);
+
+    for ($i = 0; $i < 10; $i++) {
+
+      $userA->notes()->create([
         'title' => fake()->word(),
         'content' => fake()->sentence(),
-        'user_id' => $userId,
       ]);
 
-      Task::create([
+      $userA->tasks()->create([
         'name' => fake()->word(),
         'done' => fake()->boolean(),
         'prio' => fake()->numberBetween(1, 10),
-        'user_id' => $userId,
       ]);
     }
   }

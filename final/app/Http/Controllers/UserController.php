@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController {
   function read() {
-    return Auth::user();
+    $user = Auth::user();
+    return $user;
   }
 
   function update(Request $request) {
