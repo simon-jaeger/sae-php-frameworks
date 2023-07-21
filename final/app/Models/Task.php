@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Base\BaseModel;
 use Illuminate\Http\Request;
 
 /**
@@ -10,9 +11,9 @@ use Illuminate\Http\Request;
  * @property numeric $prio
  * @property numeric $user_id
  */
-class Task extends Model {
-  static function validate(Request $request, $isNew = false) {
-    $requiredIfnew = $isNew ? 'required' : 'sometimes';
+class Task extends BaseModel {
+  static function validate(Request $request) {
+    $requiredIfnew = $request->isMethod('post') ? 'required' : 'sometimes';
     return $request->validate([
       'name' => [$requiredIfnew, 'max:255'],
       'done' => ['sometimes', 'boolean'],

@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Models;
+namespace App\Base;
 
-use Illuminate\Database\Eloquent\Model as BaseModel;
+use App\Models\IdeHelper;
+use Illuminate\Database\Eloquent\Model as LaravelModel;
 use VicGutt\AutoModelCast\Concerns\HasAutoCasting;
 use VicGutt\AutoModelCast\Contracts\AutoCastable;
 
@@ -10,7 +11,7 @@ use VicGutt\AutoModelCast\Contracts\AutoCastable;
  *
  * @mixin IdeHelper
  */
-class Model extends BaseModel implements AutoCastable {
+class BaseModel extends LaravelModel implements AutoCastable {
   use HasAutoCasting;
 
   protected $guarded = ['id'];

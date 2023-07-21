@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Base\BaseModel;
 use Illuminate\Http\Request;
 
 /**
@@ -9,9 +10,9 @@ use Illuminate\Http\Request;
  * @property string $content
  * @property numeric $user_id
  */
-class Note extends Model {
-  static function validate(Request $request, $isNew = false) {
-    $requiredIfnew = $isNew ? 'required' : 'sometimes';
+class Note extends BaseModel {
+  static function validate(Request $request) {
+    $requiredIfnew = $request->isMethod('post') ? 'required' : 'sometimes';
     return $request->validate([
       'title' => ['required', 'max:100', 'min:2'],
       'content' => [$requiredIfnew],

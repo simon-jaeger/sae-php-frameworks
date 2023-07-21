@@ -31,7 +31,7 @@ class TasksController {
   }
 
   function create(Request $request) {
-    $payload = Task::validate($request, isNew: true);
+    $payload = Task::validate($request);
     $model = Auth::user()->tasks()->create($payload);
     return $model;
   }

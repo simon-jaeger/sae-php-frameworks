@@ -12,7 +12,7 @@ class NotesController {
   }
 
   function create(Request $request) {
-    $payload = Note::validate($request, isNew: true);
+    $payload = Note::validate($request);
     $model = Auth::user()->notes()->create($payload);
     return $model;
   }

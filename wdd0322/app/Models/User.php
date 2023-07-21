@@ -23,20 +23,3 @@ class User extends Model implements AuthenticatableContract {
     ]);
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//  class User extends Model implements AuthenticatableContract {
-//  use Authenticatable;
-
