@@ -20,9 +20,36 @@ Route::delete('/notes', [NotesController::class, 'delete']);
 
 Route::post('/auth/register', [AuthController::class, 'register']);
 Route::post('/auth/login', [AuthController::class, 'login']);
-Route::post('/auth/logout', [AuthController::class, 'logout']);
 
-Route::get('/user', [UserController::class, 'read']);
+Route::middleware('auth')->group(function () {
+  Route::post('/auth/logout', [AuthController::class, 'logout']);
+
+  Route::get('/user', [UserController::class, 'read']);
+  Route::patch('/user', [UserController::class, 'update']);
+  Route::delete('/user', [UserController::class, 'delete']);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Route::middleware('auth')->group(function () {
 //}

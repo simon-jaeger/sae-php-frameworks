@@ -11,17 +11,12 @@ class DatabaseSeeder extends Seeder {
   function run() {
 
     // seed notes
-    for ($i = 0; $i < 1; $i++) {
+    for ($i = 0; $i < 10; $i++) {
       Note::create([
         'title' => fake()->word(),
         'content' => fake()->sentences(4, true),
-        'color' => fake()->hexColor(),
-        'summary' => '...',
+        'user_id' => fake()->numberBetween(1,2),
       ]);
     }
-
-    // seed your custom entity...
-    // ...
-
   }
 }

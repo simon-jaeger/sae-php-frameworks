@@ -22,4 +22,8 @@ class User extends Model implements AuthenticatableContract {
       'password' => [$requiredIfNew, 'min:8'],
     ]);
   }
+
+  function notes() {
+    return $this->hasMany(Note::class);
+  }
 }

@@ -58,9 +58,14 @@ composer run-script seed
 - users
 - auth
 - middleware
-- relationships
+- relationships (1:n)
 - E: users, auth, $user->notes()
 - T: add relationships to your entities and enforce auth
+- ........................................
+- relationships (n:n)
+- tags
+- T: tags entity
+- E: blongsToMany, attach, detach, sync, ...
 - ........................................
 - query strings (filtering, sorting, searching, ...)
 - E: tasks
@@ -75,10 +80,6 @@ composer run-script seed
 - admin user and impersonation
 - helpers, collections, datetime/carbon, mail, ...
 - services (Util.php etc.)
-- ........................................
-- T: add a blog feature (public articles and comments)
-- T: add more features and ask questions
-- T: present your project to the class
 
 ## extra tasks
 
