@@ -23,15 +23,15 @@ class User extends BaseUser {
     return $this->hasMany(Note::class);
   }
 
-  function tasks() {
-    return $this->hasMany(Task::class);
-  }
-
-  function teams() {
-    return $this->belongsToMany(Team::class);
+  function tags() {
+    return $this->hasMany(Tag::class);
   }
 
   function pictures() {
     return $this->hasMany(Picture::class);
+  }
+
+  function tasks() {
+    return $this->hasMany(Task::class);
   }
 }

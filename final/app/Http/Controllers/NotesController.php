@@ -32,4 +32,12 @@ class NotesController {
     $model->delete();
     return $model;
   }
+
+  function toggleTag(Request $request) {
+    $id = $request->input('id');
+    $tagId = $request->input('tagId');
+    $model = Auth::user()->notes()->findOrFail($id);
+    $model->tags()->toggle($tagId);
+    return $model;
+  }
 }

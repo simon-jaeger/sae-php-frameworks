@@ -27,6 +27,7 @@ class UserController {
     $user = Auth::user();
     $user->delete();
     $user->notes()->delete();
+    $user->tags()->delete();
     $user->tasks()->delete();
     if ($user->isImpersonated()) $user->leaveImpersonation();
     else Auth::logout();

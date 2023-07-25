@@ -1,5 +1,5 @@
 <?php
-use App\Http\Controllers\TeamsController;
+use App\Http\Controllers\TagsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PicturesController;
@@ -32,16 +32,12 @@ Route::middleware('auth')->group(function () {
   Route::post('/notes', [NotesController::class, 'create']);
   Route::patch('/notes', [NotesController::class, 'update']);
   Route::delete('/notes', [NotesController::class, 'delete']);
+  Route::post('/notes/toggleTag', [NotesController::class, 'toggleTag']);
 
-  Route::get('/tasks', [TasksController::class, 'read']);
-  Route::post('/tasks', [TasksController::class, 'create']);
-  Route::patch('/tasks', [TasksController::class, 'update']);
-  Route::delete('/tasks', [TasksController::class, 'delete']);
-
-  Route::get('/teams', [TeamsController::class, 'read']);
-  Route::post('/teams/join', [TeamsController::class, 'join']);
-  Route::post('/teams/leave', [TeamsController::class, 'leave']);
-
+  Route::get('/tags', [TagsController::class, 'read']);
+  Route::post('/tags', [TagsController::class, 'create']);
+  Route::patch('/tags', [TagsController::class, 'update']);
+  Route::delete('/tags', [TagsController::class, 'delete']);
 
   Route::get('/pictures', [PicturesController::class, 'read']);
   Route::get('/pictures/{id}', [PicturesController::class, 'show']);
@@ -50,4 +46,9 @@ Route::middleware('auth')->group(function () {
 
   Route::post('/admin/impersonate', [AdminController::class, 'impersonate']);
   Route::post('/admin/unimpersonate', [AdminController::class, 'unimpersonate']);
+
+  Route::get('/tasks', [TasksController::class, 'read']);
+  Route::post('/tasks', [TasksController::class, 'create']);
+  Route::patch('/tasks', [TasksController::class, 'update']);
+  Route::delete('/tasks', [TasksController::class, 'delete']);
 });

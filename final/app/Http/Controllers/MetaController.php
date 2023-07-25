@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\Util;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -18,7 +17,6 @@ class MetaController {
 
   function reverse(Request $request) {
     $input = $request->input('input');
-    //  return strrev($input); // no utf-8
     return \Str::reverse($input);
   }
 
