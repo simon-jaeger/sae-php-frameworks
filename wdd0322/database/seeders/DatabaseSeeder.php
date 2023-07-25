@@ -21,16 +21,20 @@ class DatabaseSeeder extends Seeder {
       'password' => Hash::make('password'),
     ]);
 
+    $userA->tags()->create(['name' => 'alpha']);
+    $userA->tags()->create(['name' => 'bravo']);
+    $userA->tags()->create(['name' => 'charlie']);
+
     for ($i = 0; $i < 10; $i++) {
       $userA->notes()->create([
         'title' => fake()->word,
         'content' => fake()->sentences(4, true),
       ]);
 
-      $userB->notes()->create([
-        'title' => fake()->word,
-        'content' => fake()->sentences(4, true),
-      ]);
+//      $userB->notes()->create([
+//        'title' => fake()->word,
+//        'content' => fake()->sentences(4, true),
+//      ]);
     }
 
   }

@@ -33,4 +33,13 @@ class NotesController {
     $model->delete();
     return $model;
   }
+
+  function setTags(Request $request) {
+    $id = $request->input('id');
+    $tagIds = $request->input('tagIds');
+    $model = Auth::user()->notes()->findOrFail($id);
+    $model->tags()->sync($tagIds);
+    $model->refresh();
+    return $model;
+  }
 }
