@@ -13,9 +13,14 @@ class NotesController {
     $query = Auth::user()->notes();
     if ($request->has('tagIds')) {
       $tagIds = explode(',', $request->input('tagIds'));
-      $query->whereHas('tags', function (Builder $q) use ($tagIds) {
-        $q->whereIn('tags.id', $tagIds);
-      }, '>=', count($tagIds)); // require it to have all, leave out these two params to require only on of the tags
+      $min = count($tagIds); // all
+      // $min = 1; // at least one
+      $query->whereHas(
+        'tags',
+        fn(Builder $sub) => $sub->whereIn('tags.id', $tagIds),
+        '>=',
+        $min
+      );
     }
     return $query->get();
   }
