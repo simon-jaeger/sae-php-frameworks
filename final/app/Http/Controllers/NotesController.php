@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Note;
-use App\Models\Tag;
 use Auth;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
@@ -17,7 +16,7 @@ class NotesController {
       // $min = 1; // at least one
       $query->whereHas(
         'tags',
-        fn(Builder $sub) => $sub->whereIn('tags.id', $tagIds),
+        fn(Builder $q) => $q->whereIn('tags.id', $tagIds),
         '>=',
         $min
       );
@@ -52,7 +51,7 @@ class NotesController {
     $tagIds = $request->input('tagIds');
     $model = Auth::user()->notes()->findOrFail($id);
     $model->tags()->sync($tagIds);
-    $model->refresh(); // to return an up to date tags array
+    $model->refresh(); // to refresh tags array
     return $model;
   }
 }
