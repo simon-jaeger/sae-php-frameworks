@@ -13,6 +13,8 @@ use Hash;
 
 class DatabaseSeeder extends Seeder {
   function run() {
+    // user
+    ////////////////////////////////////////////////////////////////////////////
     $userA = User::create([
       'email' => 'amy@mailinator.com',
       'password' => Hash::make('pw'),
@@ -24,8 +26,17 @@ class DatabaseSeeder extends Seeder {
       'password' => Hash::make('pw'),
     ]);
 
+    // tags
+    ////////////////////////////////////////////////////////////////////////////
+    $userA->tags()->create(['name' => 'alpha']);
+    $userA->tags()->create(['name' => 'bravo']);
+    $userA->tags()->create(['name' => 'charlie']);
+
+    // notes
+    ////////////////////////////////////////////////////////////////////////////
     for ($i = 0; $i < 10; $i++) {
-      $userA->notes()->create([
+      /** @var Note $noteA */
+      $noteA = $userA->notes()->create([
         'title' => fake()->word(),
         'content' => fake()->sentence(),
       ]);

@@ -3,12 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\Note;
+use App\Models\Tag;
 use Auth;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 
 class NotesController {
   function read(Request $request) {
-    return Auth::user()->notes()->get();
+    $query = Auth::user()->notes();
+    if ($request->has('tagIds')) {
+      $tagIds = explode(',', $request->input('tagIds'));
+      $query->whereHas('tags', function (Builder $q) use ($tagIds) {
+        $q->whereIn('tags.id', $tagIds);
+      }, '>=', count($tagIds)); // require it to have all, leave out these two params to require only on of the tags
+    }
+    return $query->get();
   }
 
   function create(Request $request) {
@@ -33,11 +42,12 @@ class NotesController {
     return $model;
   }
 
-  function toggleTag(Request $request) {
+  function setTags(Request $request) {
     $id = $request->input('id');
-    $tagId = $request->input('tagId');
+    $tagIds = $request->input('tagIds');
     $model = Auth::user()->notes()->findOrFail($id);
-    $model->tags()->toggle($tagId);
+    $model->tags()->sync($tagIds);
+    $model->refresh(); // to return an up to date tags array
     return $model;
   }
 }

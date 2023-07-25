@@ -32,7 +32,7 @@ Route::middleware('auth')->group(function () {
   Route::post('/notes', [NotesController::class, 'create']);
   Route::patch('/notes', [NotesController::class, 'update']);
   Route::delete('/notes', [NotesController::class, 'delete']);
-  Route::post('/notes/toggleTag', [NotesController::class, 'toggleTag']);
+  Route::post('/notes/setTags', [NotesController::class, 'setTags']);
 
   Route::get('/tags', [TagsController::class, 'read']);
   Route::post('/tags', [TagsController::class, 'create']);
