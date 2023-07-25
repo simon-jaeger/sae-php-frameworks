@@ -16,7 +16,6 @@ class MetaController {
 
   function reverse(Request $request) {
     $input = $request->input('input');
-//      return strrev($input); // no utf-8
     return \Str::reverse($input);
   }
 
