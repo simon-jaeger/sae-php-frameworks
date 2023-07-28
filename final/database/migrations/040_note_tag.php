@@ -8,10 +8,10 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
   function up() {
     Schema::create('note_tag', function (Blueprint $table) {
-      $table->id();
       $table->foreignId('note_id')->constrained()->onDelete('cascade');
       $table->foreignId('tag_id')->constrained()->onDelete('cascade');
-      $table->timestamps();
+
+      $table->primary(['note_id', 'tag_id']); // composite primary key
     });
   }
 

@@ -16,7 +16,7 @@ class NotesController {
       // $min = 1; // at least one
       $query->whereHas(
         'tags',
-        fn(Builder $q) => $q->whereIn('tags.id', $tagIds),
+        fn(Builder $q) => $q->whereIn('id', $tagIds),
         '>=',
         $min
       );
