@@ -8,6 +8,7 @@ return new class extends Migration {
   function up() {
     Schema::create('pictures', function (Blueprint $table) {
       $table->id();
+      $table->string('title');
       $table->string('file');
       $table->foreignId('user_id');
       $table->timestamps();

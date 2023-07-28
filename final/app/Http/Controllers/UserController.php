@@ -29,6 +29,7 @@ class UserController {
     $user->notes()->delete();
     $user->tags()->delete();
     $user->tasks()->delete();
+    $user->pictures()->delete();
     if ($user->isImpersonated()) $user->leaveImpersonation();
     else Auth::logout();
     return $user;
