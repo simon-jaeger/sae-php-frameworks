@@ -9,5 +9,5 @@ use Lab404\Impersonate\Models\Impersonate;
 class BaseUser extends BaseModel implements AuthenticatableContract {
   use Authenticatable, Impersonate;
 
-  protected $hidden = ['password'];
+  protected $hidden = ['pivot', 'password'];
 }

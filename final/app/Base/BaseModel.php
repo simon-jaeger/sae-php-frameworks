@@ -15,4 +15,5 @@ class BaseModel extends LaravelModel implements AutoCastable {
   use HasAutoCasting;
 
   protected $guarded = ['id'];
+  protected $hidden = ['pivot'];
 }
