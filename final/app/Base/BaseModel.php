@@ -15,8 +15,4 @@ class BaseModel extends LaravelModel implements AutoCastable {
   use HasAutoCasting;
 
   protected $guarded = ['id'];
-
-  static function table() {
-    return with(new static)->getTable();
-  }
 }

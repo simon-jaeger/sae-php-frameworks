@@ -1,13 +1,12 @@
 <?php
 
-use App\Models\Tag;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
   function up() {
-    Schema::create(Tag::table(), function (Blueprint $table) {
+    Schema::create('tags', function (Blueprint $table) {
       $table->id();
       $table->string('name');
       $table->foreignId('user_id');
@@ -24,7 +23,7 @@ return new class extends Migration {
   }
 
   function down() {
-    Schema::drop(Tag::table());
+    Schema::drop('tags');
     Schema::drop('note_tag'); // pivot
   }
 };

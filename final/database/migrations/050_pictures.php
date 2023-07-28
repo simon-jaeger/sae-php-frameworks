@@ -1,13 +1,12 @@
 <?php
 
-use App\Models\Picture;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
   function up() {
-    Schema::create(Picture::table(), function (Blueprint $table) {
+    Schema::create('pictures', function (Blueprint $table) {
       $table->id();
       $table->string('file');
       $table->foreignId('user_id');
@@ -16,6 +15,6 @@ return new class extends Migration {
   }
 
   function down() {
-    Schema::drop(Picture::table());
+    Schema::drop('pictures');
   }
 };

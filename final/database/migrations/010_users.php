@@ -1,13 +1,12 @@
 <?php
 
-use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
   function up(): void {
-    Schema::create(User::table(), function (Blueprint $table) {
+    Schema::create('users', function (Blueprint $table) {
       $table->id();
       $table->string('email');
       $table->string('password');
@@ -17,6 +16,6 @@ return new class extends Migration {
   }
 
   function down(): void {
-    Schema::dropIfExists(User::table());
+    Schema::dropIfExists('users');
   }
 };
