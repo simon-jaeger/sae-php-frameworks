@@ -12,14 +12,14 @@ class TagsController {
   }
 
   function create(Request $request) {
-    $payload = Tag::validate($request);
+    $payload = $request->validate(Tag::$rules);
     $model = Auth::user()->tags()->create($payload);
     return $model;
   }
 
   function update(Request $request) {
     $id = $request->input('id');
-    $payload = Tag::validate($request);
+    $payload = $request->validate(Tag::$rules);
     $model = Auth::user()->tags()->findOrFail($id);
     $model->fill($payload);
     $model->save();

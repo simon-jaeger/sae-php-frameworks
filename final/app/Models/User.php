@@ -11,13 +11,10 @@ use Illuminate\Http\Request;
  * @property boolean $is_admin
  */
 class User extends BaseUser {
-  static function validate(Request $request) {
-    $requiredIfNew = $request->isMethod('post') ? 'required' : 'sometimes';
-    return $request->validate([
-      'email' => [$requiredIfNew, 'email'],
-      'password' => [$requiredIfNew, 'min:8'],
-    ]);
-  }
+  static $rules = [
+    'email' => ['required', 'email'],
+    'password' => ['sometimes', 'min:8'],
+  ];
 
   function notes() {
     return $this->hasMany(Note::class);

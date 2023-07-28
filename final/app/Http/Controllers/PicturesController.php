@@ -12,7 +12,8 @@ class PicturesController {
     return Auth::user()->pictures()->get();
   }
 
-  function show(Request $request, string $id) {
+  function file(Request $request) {
+    $id = $request->input('id');
     $model = Auth::user()->pictures()->findOrFail($id);
     $file = Storage::get($model->file);
     $mime = Storage::mimeType($model->file);
@@ -20,7 +21,7 @@ class PicturesController {
   }
 
   function create(Request $request) {
-    $payload = Picture::validate($request);
+    $payload = $request->validate(Picture::$rules);
     $file = $request->file('file');
     $model = Auth::user()->pictures()->make($payload);
     $model->file = Storage::putFile($file);

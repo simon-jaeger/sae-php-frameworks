@@ -15,7 +15,7 @@ class UserController {
 
   function update(Request $request) {
     $user = Auth::user();
-    $payload = User::validate($request);
+    $payload = $request->validate(User::$rules);
     $user->fill($payload);
     if ($request->has('password'))
       $user->password = Hash::make($user->password);

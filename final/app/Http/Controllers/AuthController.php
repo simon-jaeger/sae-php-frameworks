@@ -9,8 +9,9 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController {
   function register(Request $request) {
-    $payload = User::validate($request);
-    $user = new User($payload);
+    if (!$request->has('password')) return abort(422, 'no password');
+    $payload = $request->validate(User::$rules);
+    $user = User::make($payload);
     $user->password = Hash::make($user->password);
     $user->save();
     Auth::login($user);

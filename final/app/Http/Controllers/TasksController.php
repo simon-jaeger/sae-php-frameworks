@@ -31,14 +31,14 @@ class TasksController {
   }
 
   function create(Request $request) {
-    $payload = Task::validate($request);
+    $payload = $request->validate(Task::$rules);
     $model = Auth::user()->tasks()->create($payload);
     return $model;
   }
 
   function update(Request $request) {
     $id = $request->input('id');
-    $payload = Task::validate($request);
+    $payload = $request->validate(Task::$rules);
     $model = Auth::user()->tasks()->findOrFail($id);
     $model->fill($payload);
     $model->save();

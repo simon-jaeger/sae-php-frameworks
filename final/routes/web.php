@@ -40,7 +40,7 @@ Route::middleware('auth')->group(function () {
   Route::delete('/tags', [TagsController::class, 'delete']);
 
   Route::get('/pictures', [PicturesController::class, 'read']);
-  Route::get('/pictures/{id}', [PicturesController::class, 'show']);
+  Route::get('/pictures/file', [PicturesController::class, 'file']);
   Route::post('/pictures', [PicturesController::class, 'create']);
   Route::delete('/pictures', [PicturesController::class, 'delete']);
 

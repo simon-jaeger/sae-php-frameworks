@@ -72,7 +72,6 @@ composer run-script seed
 - T: add filtering, sorting and searching to your entities
 - ........................................
 - file system and uploads
-- route params
 - file response
 - E: pictures
 - T: create more media entitites (music, video, zips, fonts, ...)

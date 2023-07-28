@@ -10,9 +10,7 @@ use Illuminate\Http\Request;
  * @property numeric $user_id
  */
 class Picture extends BaseModel {
-  static function validate(Request $request) {
-    return $request->validate([
-      'file' => ['required', 'image'],
-    ]);
-  }
+  static $rules = [
+    'file' => ['required', 'image'],
+  ];
 }
