@@ -5,8 +5,6 @@ namespace App\Models;
 use App\Base\BaseModel;
 use Illuminate\Http\Request;
 
-// TODO: wip
-
 /**
  * @property string $name
  * @property numeric $user_id
