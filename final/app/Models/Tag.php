@@ -2,15 +2,15 @@
 
 namespace App\Models;
 
-use App\Base\BaseModel;
+use App\Base\Model;
 use Illuminate\Http\Request;
 
 /**
  * @property string $name
  */
-class Tag extends BaseModel {
+class Tag extends Model {
   static $rules = [
-    'name' => ['required'],
+    'name' => ['required', 'string'],
   ];
 
   function notes() {

@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TagsController;
+use App\Http\Controllers\TasksController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MetaController;
@@ -34,4 +35,9 @@ Route::middleware('auth')->group(function () {
   Route::post('/tags', [TagsController::class, 'create']);
   Route::patch('/tags', [TagsController::class, 'update']);
   Route::delete('/tags', [TagsController::class, 'delete']);
+
+  Route::get('/tasks', [TasksController::class, 'read']);
+  Route::post('/tasks', [TasksController::class, 'create']);
+  Route::patch('/tasks', [TasksController::class, 'update']);
+  Route::delete('/tasks', [TasksController::class, 'delete']);
 });

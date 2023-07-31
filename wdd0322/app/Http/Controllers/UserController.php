@@ -26,6 +26,7 @@ class UserController {
     $user = Auth::user();
     $user->notes()->delete();
     $user->tags()->delete();
+    $user->tasks()->delete();
     $user->delete();
     return $user;
   }

@@ -10,11 +10,10 @@ use Illuminate\Http\Request;
 class NotesController {
   function read(Request $request) {
     $query = Auth::user()->notes();
-    $query->orderBy('id', 'desc');
     if ($request->has('tagIds')) {
       $tagIds = explode(',', $request->input('tagIds'));
-      $min = 1; // intersection with 1 or more tag ids in query param
-      // $min = count($tagIds); // intersection with all tags ids in query param
+      $min = 1; // intersection with at least 1 tag id
+      // $min = count($tagIds); // intersection with all tags ids
       $query->whereHas(
         'tags',
         fn(Builder $q) => $q->whereIn('id', $tagIds),

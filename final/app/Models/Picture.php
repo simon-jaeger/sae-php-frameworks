@@ -2,17 +2,17 @@
 
 namespace App\Models;
 
-use App\Base\BaseModel;
+use App\Base\Model;
 use Illuminate\Http\Request;
 
 /**
  * @property string $title
  * @property string $file
- * @property numeric $user_id
+ * @property int $user_id
  */
-class Picture extends BaseModel {
+class Picture extends Model {
   static $rules = [
-    'title' => ['required', 'min:1'],
+    'title' => ['required', 'string'],
     'file' => ['required', 'image'],
   ];
 }

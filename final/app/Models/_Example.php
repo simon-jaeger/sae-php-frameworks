@@ -2,11 +2,11 @@
 
 namespace App\Models;
 
-use App\Base\BaseModel;
+use App\Base\Model;
 use Illuminate\Http\Request;
 
 /**
  * @property string $something
  */
-class _Example extends BaseModel {
+class _Example extends Model {
 }

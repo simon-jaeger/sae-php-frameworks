@@ -2,12 +2,12 @@
 
 namespace App\Base;
 
-use Illuminate\Auth\Authenticatable;
+use Illuminate\Auth\Authenticatable as AuthenticatableTrait;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Lab404\Impersonate\Models\Impersonate;
 
-class BaseUser extends BaseModel implements AuthenticatableContract {
-  use Authenticatable, Impersonate;
+class Authenticatable extends Model implements AuthenticatableContract {
+  use AuthenticatableTrait, Impersonate;
 
   protected $hidden = ['pivot', 'password'];
 }

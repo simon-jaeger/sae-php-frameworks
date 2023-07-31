@@ -2,18 +2,18 @@
 
 namespace App\Models;
 
-use App\Base\BaseModel;
+use App\Base\Model;
 use Illuminate\Http\Request;
 
 /**
  * @property string $title
  * @property string $content
- * @property numeric $user_id
+ * @property int $user_id
  */
-class Note extends BaseModel {
+class Note extends Model {
   static $rules = [
-    'title' => ['required', 'min:3', 'max:255'],
-    'content' => ['required'],
+    'title' => ['required', 'string', 'min:1', 'max:255'],
+    'content' => ['required', 'string'],
   ];
 
   protected $with = ['tags'];
