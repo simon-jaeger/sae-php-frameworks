@@ -34,6 +34,11 @@ Route::middleware('auth')->group(function () {
   Route::delete('/notes', [NotesController::class, 'delete']);
   Route::post('/notes/setTags', [NotesController::class, 'setTags']);
 
+  Route::get('/tasks', [TasksController::class, 'read']);
+  Route::post('/tasks', [TasksController::class, 'create']);
+  Route::patch('/tasks', [TasksController::class, 'update']);
+  Route::delete('/tasks', [TasksController::class, 'delete']);
+
   Route::get('/tags', [TagsController::class, 'read']);
   Route::post('/tags', [TagsController::class, 'create']);
   Route::patch('/tags', [TagsController::class, 'update']);
@@ -46,9 +51,5 @@ Route::middleware('auth')->group(function () {
 
   Route::post('/admin/impersonate', [AdminController::class, 'impersonate']);
   Route::post('/admin/unimpersonate', [AdminController::class, 'unimpersonate']);
-
-  Route::get('/tasks', [TasksController::class, 'read']);
-  Route::post('/tasks', [TasksController::class, 'create']);
-  Route::patch('/tasks', [TasksController::class, 'update']);
-  Route::delete('/tasks', [TasksController::class, 'delete']);
 });
+

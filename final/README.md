@@ -20,17 +20,21 @@ composer run-script seed
 ## outline
 
 - intro
+- bash: using the terminal and shell
 - php cli
 - composer
 - os package manager (if php 8.1/composer missing)
     - macos: https://brew.sh/
     - windows: https://scoop.sh/
+- ........................................
 - software architecture: what and why?
-- api: what are headless backends? (https://jsonplaceholder.typicode.com)
-- api client: https://insomnia.rest/
 - laravel: a php framework
 - T: install everything, setup starter project
+- tinker: the php repl
+- oop: text adventure with classes
 - ........................................
+- api: what are headless backends? (https://jsonplaceholder.typicode.com)
+- api client: https://insomnia.rest/
 - routing (GET /meta/ping)
 - endpoints (VERB /controller/method)
 - controllers
@@ -40,17 +44,16 @@ composer run-script seed
 - T: create more meta endpoints (reverse, sum, ...)
 - ........................................
 - sqlite (https://marketplace.visualstudio.com/items?itemName=qwtel.sqlite-viewer)
-- models (properties + make, save, create, all, find, delete, ...)
+- models (properties + make, save, create, get, find, delete, ...)
 - migrations
-- artisan (php artisan migrate:fresh)
+- scripts (composer run-script seed)
 - crud (restful controller methods)
 - E: notes (crud)
-- T: add more fields to the note entity (string $color, boolean $hidden, integer $importance, ...)
-- T: create more crudable entities (contacts, recipes, ...)
+- T: add another field to the note entity (string $color)
+- T: create your own crudable entity (contacts, recipes, ...)
 - ........................................
 - seeding/faker
-- headers (X-Requested-With, ...)
-- http codes (200, 403, 404, 500, ...) (abort, findOrFail, ...)
+- http codes (200, 404, 500, ...) (abort, findOrFail, ...)
 - validation
 - E: notes (seed, validate)
 - T: add seeding and validation to your entities
@@ -58,18 +61,18 @@ composer run-script seed
 - users
 - auth
 - middleware
-- relationships (1:n)
+- relationships (1:n) and foreign keys
 - E: users, auth, $user->notes()
 - T: add relationships to your entities and enforce auth
-- ........................................
-- relationships (n:n)
-- tags
-- T: tags entity
-- E: blongsToMany, attach, detach, sync, ...
 - ........................................
 - query strings (filtering, sorting, searching, ...)
 - E: tasks
 - T: add filtering, sorting and searching to your entities
+- ........................................
+- relationships (n:n) and pivot tables
+- tags
+- T: tags entity
+- E: blongsToMany, attach, detach, sync, ...
 - ........................................
 - file system and uploads
 - file response
@@ -79,10 +82,4 @@ composer run-script seed
 - admin user and impersonation
 - helpers, collections, datetime/carbon, mail, ...
 - services (Util.php etc.)
-
-## extra tasks
-
-- #1: add a color field to notes (hex notation). if request has no color input, set a random gray color.
-- #2: add a summary field  to notes. automatically set it to the first 10 characters of the content followed by three dots (...) when a note is created
-- #3: add a locked field to notes. when trying to delete a note where locked is true, do not delete it and instead return a message 'cannot delete locked note'
 
