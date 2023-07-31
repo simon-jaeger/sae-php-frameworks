@@ -4,11 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Models\Note;
 use Auth;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 
 class NotesController {
   function read(Request $request) {
-    return Auth::user()->notes()->get();
+    $query = Auth::user()->notes();
+    $query->orderBy('id', 'desc');
+    if ($request->has('tagIds')) {
+      $tagIds = explode(',', $request->input('tagIds'));
+      $min = 1; // intersection with 1 or more tag ids in query param
+      // $min = count($tagIds); // intersection with all tags ids in query param
+      $query->whereHas(
+        'tags',
+        fn(Builder $q) => $q->whereIn('id', $tagIds),
+        '>=',
+        $min
+      );
+    }
+    return $query->get();
   }
 
   function create(Request $request) {

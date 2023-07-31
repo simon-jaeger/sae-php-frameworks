@@ -16,12 +16,9 @@ return new class extends Migration {
 
     // pivot
     Schema::create('note_tag', function (Blueprint $table) {
-      $table->id();
-      $table->foreignId('note_id');
-      $table->foreignId('tag_id');
-//      $table->foreignId('note_id')->constrained()->onDelete('cascade');
-//      $table->foreignId('tag_id')->constrained()->onDelete('cascade');
-      $table->timestamps();
+      $table->foreignId('note_id')->constrained()->onDelete('cascade');
+      $table->foreignId('tag_id')->constrained()->onDelete('cascade');
+      $table->primary(['note_id', 'tag_id']);
     });
   }
 
