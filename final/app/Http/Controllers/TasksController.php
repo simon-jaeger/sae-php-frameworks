@@ -7,11 +7,11 @@ use Auth;
 use Illuminate\Http\Request;
 
 class TasksController {
-  function read(Request $request) {
+  function index(Request $request) {
     $query = Auth::user()->tasks();
     if ($request->has('name')) {
       $name = $request->input('name');
-      $query->where('name', 'like', $name);
+      $query->where('name', 'like', '%' . $name . '%');
     }
     if ($request->has('done')) {
       $done = $request->boolean('done');
@@ -40,7 +40,7 @@ class TasksController {
     return $model;
   }
 
-  function delete(Request $request) {
+  function destroy(Request $request) {
     $id = $request->input('id');
     $model = Auth::user()->tasks()->findOrFail($id);
     $model->delete();

@@ -8,7 +8,7 @@ use Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UserController {
-  function read() {
+  function show() {
     $user = Auth::user();
     return $user;
   }
@@ -23,13 +23,13 @@ class UserController {
     return $user;
   }
 
-  function delete(Request $request) {
+  function destroy(Request $request) {
     $user = Auth::user();
     $user->delete();
     $user->notes()->delete();
     $user->tasks()->delete();
     $user->tags()->delete();
-    $user->pictures()->delete();
+    $user->uploads()->delete();
     if ($user->isImpersonated()) $user->leaveImpersonation();
     else Auth::logout();
     return $user;

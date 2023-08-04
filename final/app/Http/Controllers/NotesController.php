@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 
 class NotesController {
-  function read(Request $request) {
+  function index(Request $request) {
     $query = Auth::user()->notes();
     if ($request->has('tagIds')) {
       $tagIds = explode(',', $request->input('tagIds'));
@@ -39,7 +39,7 @@ class NotesController {
     return $model;
   }
 
-  function delete(Request $request) {
+  function destroy(Request $request) {
     $id = $request->input('id');
     $model = Auth::user()->notes()->findOrFail($id);
     $model->delete();

@@ -7,7 +7,7 @@ use Auth;
 use Illuminate\Http\Request;
 
 class TagsController {
-  function read(Request $request) {
+  function index(Request $request) {
     return Auth::user()->tags()->get();
   }
 
@@ -26,7 +26,7 @@ class TagsController {
     return $model;
   }
 
-  function delete(Request $request) {
+  function destroy(Request $request) {
     $id = $request->input('id');
     $model = Auth::user()->tags()->findOrFail($id);
     $model->delete();

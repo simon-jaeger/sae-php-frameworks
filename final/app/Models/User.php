@@ -2,18 +2,17 @@
 
 namespace App\Models;
 
-use App\Base\Authenticatable;
-use Illuminate\Http\Request;
+use App\Base\Model;
 
 /**
  * @property string $email
  * @property string $password
  * @property boolean $is_admin
  */
-class User extends Authenticatable {
+class User extends Model {
   static $rules = [
     'email' => ['required', 'email'],
-    'password' => ['sometimes', 'string', 'min:8'],
+    'password' => ['string', 'min:8'],
   ];
 
   function notes() {
@@ -28,7 +27,7 @@ class User extends Authenticatable {
     return $this->hasMany(Task::class);
   }
 
-  function pictures() {
-    return $this->hasMany(Picture::class);
+  function uploads() {
+    return $this->hasMany(Upload::class);
   }
 }

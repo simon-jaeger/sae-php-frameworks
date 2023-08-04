@@ -2,7 +2,7 @@
 use App\Http\Controllers\TagsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\PicturesController;
+use App\Http\Controllers\UploadsController;
 use App\Http\Controllers\TasksController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\NotesController;
@@ -24,30 +24,29 @@ Route::post('/auth/login', [AuthController::class, 'login']);
 Route::middleware('auth')->group(function () {
   Route::post('/auth/logout', [AuthController::class, 'logout']);
 
-  Route::get('/user', [UserController::class, 'read']);
+  Route::get('/user', [UserController::class, 'show']);
   Route::patch('/user', [UserController::class, 'update']);
-  Route::delete('/user', [UserController::class, 'delete']);
+  Route::delete('/user', [UserController::class, 'destroy']);
 
-  Route::get('/notes', [NotesController::class, 'read']);
+  Route::get('/notes', [NotesController::class, 'index']);
   Route::post('/notes', [NotesController::class, 'create']);
   Route::patch('/notes', [NotesController::class, 'update']);
-  Route::delete('/notes', [NotesController::class, 'delete']);
+  Route::delete('/notes', [NotesController::class, 'destroy']);
   Route::post('/notes/setTags', [NotesController::class, 'setTags']);
 
-  Route::get('/tasks', [TasksController::class, 'read']);
+  Route::get('/tasks', [TasksController::class, 'index']);
   Route::post('/tasks', [TasksController::class, 'create']);
   Route::patch('/tasks', [TasksController::class, 'update']);
-  Route::delete('/tasks', [TasksController::class, 'delete']);
+  Route::delete('/tasks', [TasksController::class, 'destroy']);
 
-  Route::get('/tags', [TagsController::class, 'read']);
+  Route::get('/tags', [TagsController::class, 'index']);
   Route::post('/tags', [TagsController::class, 'create']);
   Route::patch('/tags', [TagsController::class, 'update']);
-  Route::delete('/tags', [TagsController::class, 'delete']);
+  Route::delete('/tags', [TagsController::class, 'destroy']);
 
-  Route::get('/pictures', [PicturesController::class, 'read']);
-  Route::get('/pictures/file', [PicturesController::class, 'file']);
-  Route::post('/pictures', [PicturesController::class, 'create']);
-  Route::delete('/pictures', [PicturesController::class, 'delete']);
+  Route::get('/uploads', [UploadsController::class, 'index']);
+  Route::post('/uploads', [UploadsController::class, 'create']);
+  Route::delete('/uploads', [UploadsController::class, 'destroy']);
 
   Route::post('/admin/impersonate', [AdminController::class, 'impersonate']);
   Route::post('/admin/unimpersonate', [AdminController::class, 'unimpersonate']);
