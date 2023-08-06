@@ -30,7 +30,7 @@ return [
 
   'disks' => [
 
-    'private' => [
+    'local' => [
       'driver' => 'local',
       'root' => storage_path('app/uploads'),
       'throw' => false,
@@ -38,7 +38,7 @@ return [
 
     'public' => [
       'driver' => 'local',
-      'root' => public_path('files/uploads'),
+      'root' => public_path('uploads'),
     ],
 
   ],

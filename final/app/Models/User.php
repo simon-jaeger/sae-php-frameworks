@@ -27,7 +27,7 @@ class User extends Model {
     return $this->hasMany(Task::class);
   }
 
-  function uploads() {
-    return $this->hasMany(Upload::class);
+  function pictures() {
+    return $this->hasMany(Picture::class);
   }
 }

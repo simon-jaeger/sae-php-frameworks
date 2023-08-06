@@ -2,7 +2,7 @@
 use App\Http\Controllers\TagsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\UploadsController;
+use App\Http\Controllers\PicturesController;
 use App\Http\Controllers\TasksController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\NotesController;
@@ -44,9 +44,10 @@ Route::middleware('auth')->group(function () {
   Route::patch('/tags', [TagsController::class, 'update']);
   Route::delete('/tags', [TagsController::class, 'destroy']);
 
-  Route::get('/uploads', [UploadsController::class, 'index']);
-  Route::post('/uploads', [UploadsController::class, 'create']);
-  Route::delete('/uploads', [UploadsController::class, 'destroy']);
+  Route::get('/pictures', [PicturesController::class, 'index']);
+  Route::get('/pictures/{id}', [PicturesController::class, 'show']);
+  Route::post('/pictures', [PicturesController::class, 'create']);
+  Route::delete('/pictures', [PicturesController::class, 'destroy']);
 
   Route::post('/admin/impersonate', [AdminController::class, 'impersonate']);
   Route::post('/admin/unimpersonate', [AdminController::class, 'unimpersonate']);

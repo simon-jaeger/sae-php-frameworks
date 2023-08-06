@@ -31,7 +31,8 @@ composer run-script seed
 - laravel: a php framework
 - T: install everything, setup starter project
 - tinker: the php repl
-- oop: text adventure with classes
+- oop: geometry (Rectangle.php, Circle.php, ...)
+- oop: text adventure (Hero.php, Enemy.php, ...)
 - ........................................
 - api: what are headless backends? (https://jsonplaceholder.typicode.com)
 - api client: https://insomnia.rest/
@@ -69,17 +70,22 @@ composer run-script seed
 - E: tasks
 - T: add filtering, sorting and searching to your entities
 - ........................................
-- relationships (n:n) and pivot tables
+- relationships (n:m) and pivot tables
 - tags
 - T: tags entity
 - E: blongsToMany, attach, detach, sync, ...
 - ........................................
+- route parameters
 - file system and uploads
 - file response
 - E: pictures
-- T: create more media entitites (music, video, zips, fonts, ...)
+- T: create more media entitites (song, video, pdf, zip, font, ...)
 - ........................................
 - admin user and impersonation
-- helpers, collections, datetime/carbon, mail, ...
-- services (Util.php etc.)
+- E: admin controller
+- T: add more admin features (number of users etc.)
+- ........................................
+- services
+- E: Util.php
+- T: add more util functions or services
 

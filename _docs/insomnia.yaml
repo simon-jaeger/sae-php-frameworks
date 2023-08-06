@@ -1,6 +1,6 @@
 _type: export
 __export_format: 4
-__export_date: 2023-07-28T10:29:00.983Z
+__export_date: 2023-08-06T18:01:06.499Z
 __export_source: insomnia.desktop.app:v2023.4.0
 resources:
   - _id: req_96dc0d0112a84529a027430d450357e2
@@ -217,7 +217,7 @@ resources:
     _type: request
   - _id: req_15e321d530554af789f4f830edaeb600
     parentId: fld_9675a480663d481e871c53f7f26ea09c
-    modified: 1690540049188
+    modified: 1690552564751
     created: 1684589874805
     url: "{{ _.baseUrl }}/auth/register"
     name: register
@@ -304,10 +304,10 @@ resources:
     _type: request
   - _id: req_41658fcff19b4ab5bb767e09768f8253
     parentId: fld_91b46f1c16d343fcaa3e2b414a36e716
-    modified: 1690540058090
+    modified: 1691155909953
     created: 1684589735246
     url: "{{ _.baseUrl }}/user"
-    name: read
+    name: show
     description: ""
     method: GET
     body: {}
@@ -335,7 +335,7 @@ resources:
     _type: request_group
   - _id: req_d7bcee6530f545d69d7a818928d1fbc2
     parentId: fld_91b46f1c16d343fcaa3e2b414a36e716
-    modified: 1690540060425
+    modified: 1690551815182
     created: 1685461731994
     url: "{{ _.baseUrl }}/user"
     name: update
@@ -349,7 +349,11 @@ resources:
         	"password": "newpassword"
         }
     parameters: []
-    headers: []
+    headers:
+      - id: pair_2a68271df5024726802ce61e213fecaa
+        name: ""
+        value: ""
+        description: ""
     authentication: {}
     metaSortKey: -1684324399105.9219
     isPrivate: false
@@ -362,10 +366,10 @@ resources:
     _type: request
   - _id: req_521cce76dc75450cb1a9fd52507ca4d5
     parentId: fld_91b46f1c16d343fcaa3e2b414a36e716
-    modified: 1690540062806
+    modified: 1691155954523
     created: 1686939441791
     url: "{{ _.baseUrl }}/user"
-    name: delete
+    name: destroy
     description: ""
     method: DELETE
     body:
@@ -385,10 +389,10 @@ resources:
     _type: request
   - _id: req_952b22b930cc4cdab81dccab31deaec0
     parentId: fld_3f28e67f576f4011add4db40a8458498
-    modified: 1690540065597
+    modified: 1691155916118
     created: 1684326200152
     url: "{{ _.baseUrl }}/notes"
-    name: read
+    name: index
     description: ""
     method: GET
     body:
@@ -399,7 +403,7 @@ resources:
         name: tagIds
         value: "2"
         description: ""
-        disabled: false
+        disabled: true
     headers: []
     authentication: {}
     metaSortKey: -1684324488568.4375
@@ -423,7 +427,7 @@ resources:
     _type: request_group
   - _id: req_5f438fc5850d40cc9aedead9c1eda3d7
     parentId: fld_3f28e67f576f4011add4db40a8458498
-    modified: 1690540068263
+    modified: 1690823672610
     created: 1684325800752
     url: "{{ _.baseUrl }}/notes"
     name: create
@@ -433,7 +437,6 @@ resources:
       mimeType: application/json
       text: |
         {
-        	"title": "",
         	"content": "an api client"
         }
     parameters: []
@@ -478,10 +481,10 @@ resources:
     _type: request
   - _id: req_07d0c760dd5a49fbafc78babadcff890
     parentId: fld_3f28e67f576f4011add4db40a8458498
-    modified: 1690540073380
+    modified: 1691155949498
     created: 1684438237768
     url: "{{ _.baseUrl }}/notes"
-    name: delete
+    name: destroy
     description: ""
     method: DELETE
     body:
@@ -531,10 +534,10 @@ resources:
     _type: request
   - _id: req_0c2f5852a4b14c06814400767bf6b390
     parentId: fld_e0fad23c10254047a1a4d679127c781c
-    modified: 1690540078517
+    modified: 1691155920034
     created: 1689950010353
     url: "{{ _.baseUrl }}/tags"
-    name: read
+    name: index
     description: ""
     method: GET
     body:
@@ -617,10 +620,10 @@ resources:
     _type: request
   - _id: req_da7cfc696bce4c0fadd7fcddbe6910b0
     parentId: fld_e0fad23c10254047a1a4d679127c781c
-    modified: 1690540084834
+    modified: 1691155944341
     created: 1690298251295
     url: "{{ _.baseUrl }}/tags"
-    name: delete
+    name: destroy
     description: ""
     method: DELETE
     body:
@@ -643,10 +646,10 @@ resources:
     _type: request
   - _id: req_45942612f7404d0cb7de9bba194547f1
     parentId: fld_6373abada5b040daba8a680d1a6e81e1
-    modified: 1690540099843
+    modified: 1691160693512
     created: 1685697868564
     url: "{{ _.baseUrl }}/tasks"
-    name: read
+    name: index
     description: ""
     method: GET
     body:
@@ -657,12 +660,12 @@ resources:
         name: sortBy
         value: prio
         description: ""
-        disabled: false
+        disabled: true
       - id: pair_511532e6f9db4666839f25a0c7353dd2
         name: sortDir
         value: asc
         description: ""
-        disabled: false
+        disabled: true
       - id: pair_07d3e8af8b7f48819d876bbee713a447
         name: done
         value: "false"
@@ -680,9 +683,9 @@ resources:
         disabled: true
       - id: pair_c0ca7981c29e479b81ca22af65777fd9
         name: name
-        value: "%a%"
+        value: a
         description: ""
-        disabled: false
+        disabled: true
     headers: []
     authentication: {}
     metaSortKey: -1684324488568.4375
@@ -763,10 +766,10 @@ resources:
     _type: request
   - _id: req_7388559434d54ceb958aa0f27b70d01b
     parentId: fld_6373abada5b040daba8a680d1a6e81e1
-    modified: 1690540106732
+    modified: 1691155940536
     created: 1685697868566
     url: "{{ _.baseUrl }}/tasks"
-    name: delete
+    name: destroy
     description: ""
     method: DELETE
     body:
@@ -789,10 +792,10 @@ resources:
     _type: request
   - _id: req_245f047fe1da4558a94ed02d45a73f44
     parentId: fld_ef847f3bf5d845d39bdb15b4ebd931e5
-    modified: 1690540087001
+    modified: 1691341060026
     created: 1687434838047
     url: "{{ _.baseUrl }}/pictures"
-    name: read
+    name: index
     description: ""
     method: GET
     body:
@@ -801,7 +804,7 @@ resources:
     parameters: []
     headers: []
     authentication: {}
-    metaSortKey: -1684324488568.4375
+    metaSortKey: -1687741830558.2188
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
@@ -812,7 +815,7 @@ resources:
     _type: request
   - _id: fld_ef847f3bf5d845d39bdb15b4ebd931e5
     parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
-    modified: 1690298004972
+    modified: 1691341052516
     created: 1687434838042
     name: pictures
     description: ""
@@ -820,21 +823,19 @@ resources:
     environmentPropertyOrder: null
     metaSortKey: -1683863813634.0156
     _type: request_group
-  - _id: req_3ae8cb5d090d49bdab99458eca1d0288
+  - _id: req_34fa2516110f47719bf33d62ce621b40
     parentId: fld_ef847f3bf5d845d39bdb15b4ebd931e5
-    modified: 1690540089047
-    created: 1687436693218
+    modified: 1691342046234
+    created: 1691159172548
     url: "{{ _.baseUrl }}/pictures/1"
     name: show
     description: ""
     method: GET
-    body:
-      mimeType: application/json
-      text: ""
+    body: {}
     parameters: []
     headers: []
     authentication: {}
-    metaSortKey: -1684324443837.1797
+    metaSortKey: -1686033070100.8125
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
@@ -845,7 +846,7 @@ resources:
     _type: request
   - _id: req_58f670df23284b04a047a8aa0451f7b0
     parentId: fld_ef847f3bf5d845d39bdb15b4ebd931e5
-    modified: 1690540092920
+    modified: 1691341289897
     created: 1687434838044
     url: "{{ _.baseUrl }}/pictures"
     name: create
@@ -854,15 +855,12 @@ resources:
     body:
       mimeType: multipart/form-data
       params:
-        - name: title
-          value: foobar
-          id: pair_bca1d53f39ab416a934d5bf3a4b9fbf1
-        - id: pair_b25cd58b7100480da743baafb978731b
+        - id: pair_09b2036e5a914a3795c265085d4cfac3
           name: file
           value: ""
           description: ""
           type: file
-          fileName: /Users/simon/home/google-drive/media/images/avatars/lego-2.jpg
+          fileName: /Users/simon/home/google-drive/media/images/seasons/fall.webp
     parameters: []
     headers: []
     authentication: {}
@@ -877,17 +875,17 @@ resources:
     _type: request
   - _id: req_9f50ace9378444af9e9f7fce50038b6a
     parentId: fld_ef847f3bf5d845d39bdb15b4ebd931e5
-    modified: 1690540090955
+    modified: 1691341070332
     created: 1687434838048
     url: "{{ _.baseUrl }}/pictures"
-    name: delete
+    name: destroy
     description: ""
     method: DELETE
     body:
       mimeType: application/json
       text: |-
         {
-        	"id": 2
+        	"id": 1
         }
     parameters: []
     headers: []
@@ -976,13 +974,13 @@ resources:
     _type: environment
   - _id: jar_4c61778f42f91623bc8c3bc6b2479dd1db01a515
     parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
-    modified: 1690540014000
+    modified: 1691341967564
     created: 1684321240589
     name: Default Jar
     cookies:
       - key: laravel_session
-        value: eyJpdiI6InRPbHkrZzU4NVhZaERFSndzVTlEZlE9PSIsInZhbHVlIjoiTU5sdkpnY0NLWUtvOXlDUmZtUndVdTVKUW14NjhMS1ZUL2Jrb1JWc2d2VWdhYy9yaFhPWmhsYmc3eVExV0kzMDhVREZuTG1vMUZEMzBmUENFWU5Cb2lJQjVkMzBrMHZjZHF1UEljdk52SXhBUTNJdUJsQXBZZ0Rnck5ydC9JK2giLCJtYWMiOiIwZjI5Njg5MjU0MWE4MTFkMmFhM2I4NTg2NjU0ZmQ1YmRhMWMxZDk5ZmY5NTU0ZDJlNDNiMTVjYTY4MDdjZmJhIiwidGFnIjoiIn0%3D
-        expires: 2023-07-29T10:26:53.000Z
+        value: eyJpdiI6InIrRHBqMk1sUXQ0SDgybFRHNm8xakE9PSIsInZhbHVlIjoia3I4NVl5ODFtSktOdVhuWXJZZXR3RWJJNkJnRmR3R1ZCZHVkdFZLU0dlL1pzUGZpSnFLQ2owR3MrTXgzQ21Bdk53UklCeWlKUjR2YWpsaXdiRm5jdXNnOTlXMDdKMmVrWmpzSlV4R3hiUk9HNlZKbmo0R29seDNZSjJjYWwvQTYiLCJtYWMiOiI4YjI3NzUzMjUwMzE0ZGViYzhjNDU3MDY1MTJkMWI3NmZjMDVmNDgxMDQzZjk1MTM3MTg1Mjg0ZDM4OTgxNDg3IiwidGFnIjoiIn0%3D
+        expires: 2023-08-07T17:12:47.000Z
         maxAge: 86400
         domain: localhost
         path: /
@@ -991,8 +989,8 @@ resources:
           - samesite=lax
         hostOnly: true
         creation: 2023-05-20T14:18:51.629Z
-        lastAccessed: 2023-07-28T10:26:54.000Z
-        id: "12566616851977308"
+        lastAccessed: 2023-08-06T17:12:47.564Z
+        id: "28693518532584616"
     _type: cookie_jar
   - _id: spc_525102b2bb414a0e8c7d04c5e998a738
     parentId: wrk_a88f9fb4df484eb28cb77579b4e283b1
