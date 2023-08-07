@@ -85,7 +85,8 @@ composer run-script seed
 - E: admin controller
 - T: add more admin features (number of users etc.)
 - ........................................
-- services
-- E: Util.php
-- T: add more util functions or services
+- static helper classes (Str, Arr, Carbon, ...)
+- custom helpers
+- E: Color.php
+- T: read about the built-in helpers and build your own
 
