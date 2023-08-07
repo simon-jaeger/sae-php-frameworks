@@ -19,7 +19,6 @@ class Color {
     $red = substr($color, 1, 2);
     $green = substr($color, 3, 2);
     $blue = substr($color, 5, 2);
-    var_dump($red, $green, $blue);
     return $red === $green && $green === $blue;
   }
 }
