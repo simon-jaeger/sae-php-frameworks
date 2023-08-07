@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PicturesController;
 use App\Http\Controllers\TagsController;
 use App\Http\Controllers\TasksController;
 use App\Http\Controllers\UserController;
@@ -40,4 +41,11 @@ Route::middleware('auth')->group(function () {
   Route::post('/tasks', [TasksController::class, 'create']);
   Route::patch('/tasks', [TasksController::class, 'update']);
   Route::delete('/tasks', [TasksController::class, 'delete']);
+
+  Route::get('/pictures', [PicturesController::class, 'read']);
+  Route::get('/pictures/{id}', [PicturesController::class, 'show']);
+  Route::post('/pictures', [PicturesController::class, 'create']);
+  Route::post('/pictures/replace', [PicturesController::class, 'replace']);
+  Route::delete('/pictures', [PicturesController::class, 'delete']);
 });
+
