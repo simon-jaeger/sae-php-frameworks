@@ -79,7 +79,7 @@ composer run-script seed
 - file system and uploads
 - file response
 - E: pictures
-- T: create more media entitites (song, video, pdf, zip, font, ...)
+- T: create more media entitites (song, video, pdf, ...)
 - ........................................
 - admin user and impersonation
 - E: admin controller
