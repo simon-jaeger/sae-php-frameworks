@@ -45,7 +45,7 @@ Route::middleware('auth')->group(function () {
   Route::get('/pictures', [PicturesController::class, 'read']);
   Route::get('/pictures/{id}', [PicturesController::class, 'show']);
   Route::post('/pictures', [PicturesController::class, 'create']);
-  Route::post('/pictures/replace', [PicturesController::class, 'replace']);
+  Route::patch('/pictures', [PicturesController::class, 'update']);
   Route::delete('/pictures', [PicturesController::class, 'delete']);
 });
 

@@ -10,6 +10,6 @@ use App\Base\Model;
  */
 class Picture extends Model {
   static $rules = [
-    'file' => ['required', 'image', 'dimensions:max_width=2000,max_height=2000', 'max:5000'],
+    'file' => ['required', 'image', 'max:5000'],
   ];
 }

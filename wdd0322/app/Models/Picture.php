@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class Picture extends Model {
   static function validate(Request $request, $isNew = false) {
     return $request->validate([
-      'file' => ['sometimes', 'image', 'max:5000'],
+      'file' => ['required', 'image', 'max:5000'],
     ]);
   }
 }

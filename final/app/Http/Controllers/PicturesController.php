@@ -28,6 +28,17 @@ class PicturesController {
     return $model;
   }
 
+  function update(Request $request) {
+    $id = $request->input('id');
+    $payload = $request->validate(Picture::$rules);
+    $model = Auth::user()->pictures()->findOrFail($id);
+    Storage::delete($model->file);
+    $file = $request->file('file');
+    $model->file = Storage::putFile($file);
+    $model->save();
+    return $model;
+  }
+
   function destroy(Request $request) {
     $id = $request->input('id');
     $model = Auth::user()->pictures()->findOrFail($id);

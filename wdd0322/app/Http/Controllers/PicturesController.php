@@ -28,7 +28,7 @@ class PicturesController {
     return $model;
   }
 
-  function replace(Request $request) {
+  function update(Request $request) {
     $id = $request->input('id');
     $payload = Picture::validate($request);
     $model = Auth::user()->pictures()->findOrFail($id);
