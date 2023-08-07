@@ -1,6 +1,6 @@
 _type: export
 __export_format: 4
-__export_date: 2023-08-06T18:01:06.499Z
+__export_date: 2023-08-07T17:40:10.807Z
 __export_source: insomnia.desktop.app:v2023.4.0
 resources:
   - _id: req_96dc0d0112a84529a027430d450357e2
@@ -865,6 +865,43 @@ resources:
     headers: []
     authentication: {}
     metaSortKey: -1684324309643.4062
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_e682c21031d5474e9a15a3d1770e0e0e
+    parentId: fld_ef847f3bf5d845d39bdb15b4ebd931e5
+    modified: 1691429890126
+    created: 1691429865883
+    url: "{{ _.baseUrl }}/pictures"
+    name: update
+    description: ""
+    method: POST
+    body:
+      mimeType: multipart/form-data
+      params:
+        - id: pair_9de46564ca3d4c9cb7dd00207f3bcc4a
+          name: id
+          value: "1"
+          description: ""
+        - id: pair_b3b87177245048ad874c731a32cf9190
+          name: file
+          value: ""
+          description: ""
+          type: file
+          fileName: /Users/simon/home/google-drive/media/images/seasons/spring.webp
+        - id: pair_6eb0975d8d4b4daa8c333014ce815f78
+          name: _method
+          value: PATCH
+          description: ""
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1684324294256.0989
     isPrivate: false
     settingStoreCookies: true
     settingSendCookies: true
