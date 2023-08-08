@@ -85,7 +85,7 @@ composer run-script seed
 - E: admin controller
 - T: add more admin features (number of users etc.)
 - ........................................
-- static helper classes (Str, Arr, Carbon, ...)
+- static helper classes (Str, Arr, ...)
 - custom helpers
 - E: Color.php
 - T: read about the built-in helpers and build your own
