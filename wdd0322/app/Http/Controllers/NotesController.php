@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Color;
 use App\Models\Note;
 use Auth;
 use Illuminate\Database\Eloquent\Builder;
