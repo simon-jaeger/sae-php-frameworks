@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PicturesController;
 use App\Http\Controllers\TagsController;
@@ -47,5 +48,8 @@ Route::middleware('auth')->group(function () {
   Route::post('/pictures', [PicturesController::class, 'create']);
   Route::patch('/pictures', [PicturesController::class, 'update']);
   Route::delete('/pictures', [PicturesController::class, 'delete']);
+
+  Route::post('/admin/impersonate', [AdminController::class, 'impersonate']);
+  Route::post('/admin/unimpersonate', [AdminController::class, 'unimpersonate']);
 });
 

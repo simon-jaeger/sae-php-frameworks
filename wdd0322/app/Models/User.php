@@ -5,13 +5,15 @@ namespace App\Models;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Http\Request;
+use Lab404\Impersonate\Models\Impersonate;
 
 /**
  * @property string $email
  * @property string $password
+ * @property boolean $is_admin
  */
 class User extends Model implements AuthenticatableContract {
-  use Authenticatable;
+  use Authenticatable, Impersonate;
 
   protected $hidden = ['password'];
 

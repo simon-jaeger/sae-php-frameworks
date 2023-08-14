@@ -5,9 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 class MetaController {
-  function demo() {
-  }
-
   function ping(Request $request) {
     return "pong";
   }
