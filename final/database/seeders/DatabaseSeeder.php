@@ -26,6 +26,11 @@ class DatabaseSeeder extends Seeder {
       'password' => Hash::make('pw'),
     ]);
 
+    $userB = User::create([
+      'email' => 'clara@mailinator.com',
+      'password' => Hash::make('pw'),
+    ]);
+
     // tags
     ////////////////////////////////////////////////////////////////////////////
     $userA->tags()->create(['name' => 'alpha']);

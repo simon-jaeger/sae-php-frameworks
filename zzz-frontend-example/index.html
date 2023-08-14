@@ -5,10 +5,19 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>vite</title>
-    <link href="/src/style.css" rel="stylesheet">
+    <link href="/src/style.css" rel="stylesheet" />
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div style="display: flex; gap: 1rem">
+        <button id="ping">ping</button>
+        <button id="reverse">reverse</button>
+        <button id="login">login</button>
+        <button id="logout">logout</button>
+        <button id="notes">notes</button>
+      </div>
+      <pre id="output" style="border: 1px solid; padding: 16px">...</pre>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

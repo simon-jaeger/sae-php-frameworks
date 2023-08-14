@@ -51,5 +51,8 @@ Route::middleware('auth')->group(function () {
 
   Route::post('/admin/impersonate', [AdminController::class, 'impersonate']);
   Route::post('/admin/unimpersonate', [AdminController::class, 'unimpersonate']);
+  Route::post('/admin/makeAdmin', [AdminController::class, 'makeAdmin']);
+  Route::post('/admin/setPassword', [AdminController::class, 'setPassword']);
+  Route::get('/admin/stats', [AdminController::class, 'stats']);
 });
 
