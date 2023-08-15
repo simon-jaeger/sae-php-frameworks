@@ -42,7 +42,8 @@
       "Composer\\Config::disableProcessTimeout",
       "touch ./database/database.sqlite && php -d max_execution_time=0 artisan serve"
     ],
-    "seed": " touch ./database/database.sqlite && php artisan migrate:fresh --seed",
+    "seed": "touch ./database/database.sqlite && php artisan migrate:fresh --seed",
+    "refresh": "php artisan cache:clear && composer dump-autoload",
     "post-autoload-dump": [
       "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
       "@php artisan package:discover --ansi"

@@ -31,8 +31,7 @@ composer run-script seed
 - laravel: a php framework
 - T: install everything, setup starter project
 - tinker: the php repl
-- oop: geometry (Rectangle.php, Circle.php, ...)
-- oop: text adventure (Hero.php, Enemy.php, ...)
+- oop: review, abstraction (Rectangle.php, Coin.php, ...)
 - ........................................
 - api: what are headless backends? (https://jsonplaceholder.typicode.com)
 - api client: https://insomnia.rest/
