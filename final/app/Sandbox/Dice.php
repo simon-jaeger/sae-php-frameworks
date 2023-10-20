@@ -7,6 +7,6 @@ class Dice {
 
   function throw() {
     $this->number = rand(1, 6);
-    print_r($this);
+    return $this->number;
   }
 }

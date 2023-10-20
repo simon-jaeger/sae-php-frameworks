@@ -7,6 +7,6 @@ class Coin {
 
   function flip() {
     $this->heads = rand(0, 1) === 1;
-    print_r($this);
+    return $this->heads;
   }
 }

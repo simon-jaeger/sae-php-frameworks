@@ -11,10 +11,10 @@ class AnExample {
 
   // methods
   function hi() {
-    print_r("hello, world!");
+    return "hello, world!";
   }
 
   function bye() {
-    print_r("goodbye!");
+    return "goodbye!";
   }
 }

@@ -1974,14 +1974,39 @@
                         return $instance->getDefaultUserProvider();
         }
                     /**
+         * Log a user into the application without firing the Login event.
+         *
+         * @param \Illuminate\Contracts\Auth\Authenticatable $user
+         * @return void 
+         * @static 
+         */ 
+        public static function quietLogin($user)
+        {
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
+                        $instance->quietLogin($user);
+        }
+                    /**
+         * Logout the user without updating remember_token
+         * and without firing the Logout event.
+         *
+         * @param void
+         * @return void 
+         * @static 
+         */ 
+        public static function quietLogout()
+        {
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
+                        $instance->quietLogout();
+        }
+                    /**
          * Get the currently authenticated user.
          *
          * @return \App\Models\User|null 
          * @static 
          */ 
         public static function user()
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         return $instance->user();
         }
                     /**
@@ -1991,8 +2016,8 @@
          * @static 
          */ 
         public static function id()
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         return $instance->id();
         }
                     /**
@@ -2003,8 +2028,8 @@
          * @static 
          */ 
         public static function once($credentials = [])
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         return $instance->once($credentials);
         }
                     /**
@@ -2015,8 +2040,8 @@
          * @static 
          */ 
         public static function onceUsingId($id)
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         return $instance->onceUsingId($id);
         }
                     /**
@@ -2027,8 +2052,8 @@
          * @static 
          */ 
         public static function validate($credentials = [])
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         return $instance->validate($credentials);
         }
                     /**
@@ -2041,8 +2066,8 @@
          * @static 
          */ 
         public static function basic($field = 'email', $extraConditions = [])
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         return $instance->basic($field, $extraConditions);
         }
                     /**
@@ -2055,8 +2080,8 @@
          * @static 
          */ 
         public static function onceBasic($field = 'email', $extraConditions = [])
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         return $instance->onceBasic($field, $extraConditions);
         }
                     /**
@@ -2068,8 +2093,8 @@
          * @static 
          */ 
         public static function attempt($credentials = [], $remember = false)
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         return $instance->attempt($credentials, $remember);
         }
                     /**
@@ -2082,8 +2107,8 @@
          * @static 
          */ 
         public static function attemptWhen($credentials = [], $callbacks = null, $remember = false)
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         return $instance->attemptWhen($credentials, $callbacks, $remember);
         }
                     /**
@@ -2095,8 +2120,8 @@
          * @static 
          */ 
         public static function loginUsingId($id, $remember = false)
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         return $instance->loginUsingId($id, $remember);
         }
                     /**
@@ -2108,8 +2133,8 @@
          * @static 
          */ 
         public static function login($user, $remember = false)
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         $instance->login($user, $remember);
         }
                     /**
@@ -2119,8 +2144,8 @@
          * @static 
          */ 
         public static function logout()
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         $instance->logout();
         }
                     /**
@@ -2132,8 +2157,8 @@
          * @static 
          */ 
         public static function logoutCurrentDevice()
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         $instance->logoutCurrentDevice();
         }
                     /**
@@ -2148,8 +2173,8 @@
          * @static 
          */ 
         public static function logoutOtherDevices($password, $attribute = 'password')
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         return $instance->logoutOtherDevices($password, $attribute);
         }
                     /**
@@ -2160,8 +2185,8 @@
          * @static 
          */ 
         public static function attempting($callback)
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         $instance->attempting($callback);
         }
                     /**
@@ -2171,8 +2196,8 @@
          * @static 
          */ 
         public static function getLastAttempted()
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         return $instance->getLastAttempted();
         }
                     /**
@@ -2182,8 +2207,8 @@
          * @static 
          */ 
         public static function getName()
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         return $instance->getName();
         }
                     /**
@@ -2193,8 +2218,8 @@
          * @static 
          */ 
         public static function getRecallerName()
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         return $instance->getRecallerName();
         }
                     /**
@@ -2204,20 +2229,20 @@
          * @static 
          */ 
         public static function viaRemember()
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         return $instance->viaRemember();
         }
                     /**
          * Set the number of minutes the remember me cookie should be valid for.
          *
          * @param int $minutes
-         * @return \Illuminate\Auth\SessionGuard 
+         * @return \Lab404\Impersonate\Guard\SessionGuard 
          * @static 
          */ 
         public static function setRememberDuration($minutes)
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         return $instance->setRememberDuration($minutes);
         }
                     /**
@@ -2228,8 +2253,8 @@
          * @static 
          */ 
         public static function getCookieJar()
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         return $instance->getCookieJar();
         }
                     /**
@@ -2240,8 +2265,8 @@
          * @static 
          */ 
         public static function setCookieJar($cookie)
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         $instance->setCookieJar($cookie);
         }
                     /**
@@ -2251,8 +2276,8 @@
          * @static 
          */ 
         public static function getDispatcher()
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         return $instance->getDispatcher();
         }
                     /**
@@ -2263,8 +2288,8 @@
          * @static 
          */ 
         public static function setDispatcher($events)
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         $instance->setDispatcher($events);
         }
                     /**
@@ -2274,8 +2299,8 @@
          * @static 
          */ 
         public static function getSession()
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         return $instance->getSession();
         }
                     /**
@@ -2285,8 +2310,8 @@
          * @static 
          */ 
         public static function getUser()
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         return $instance->getUser();
         }
                     /**
@@ -2297,8 +2322,8 @@
          * @static 
          */ 
         public static function setUser($user)
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         $instance->setUser($user);
         }
                     /**
@@ -2308,20 +2333,20 @@
          * @static 
          */ 
         public static function getRequest()
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         return $instance->getRequest();
         }
                     /**
          * Set the current request instance.
          *
          * @param \Symfony\Component\HttpFoundation\Request $request
-         * @return \Illuminate\Auth\SessionGuard 
+         * @return \Lab404\Impersonate\Guard\SessionGuard 
          * @static 
          */ 
         public static function setRequest($request)
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         return $instance->setRequest($request);
         }
                     /**
@@ -2331,8 +2356,8 @@
          * @static 
          */ 
         public static function getTimebox()
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         return $instance->getTimebox();
         }
                     /**
@@ -2343,8 +2368,8 @@
          * @static 
          */ 
         public static function authenticate()
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         return $instance->authenticate();
         }
                     /**
@@ -2354,8 +2379,8 @@
          * @static 
          */ 
         public static function hasUser()
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         return $instance->hasUser();
         }
                     /**
@@ -2365,8 +2390,8 @@
          * @static 
          */ 
         public static function check()
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         return $instance->check();
         }
                     /**
@@ -2376,19 +2401,19 @@
          * @static 
          */ 
         public static function guest()
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         return $instance->guest();
         }
                     /**
          * Forget the current user.
          *
-         * @return \Illuminate\Auth\SessionGuard 
+         * @return \Lab404\Impersonate\Guard\SessionGuard 
          * @static 
          */ 
         public static function forgetUser()
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         return $instance->forgetUser();
         }
                     /**
@@ -2398,8 +2423,8 @@
          * @static 
          */ 
         public static function getProvider()
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         return $instance->getProvider();
         }
                     /**
@@ -2410,8 +2435,8 @@
          * @static 
          */ 
         public static function setProvider($provider)
-        {
-                        /** @var \Illuminate\Auth\SessionGuard $instance */
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        /** @var \Lab404\Impersonate\Guard\SessionGuard $instance */
                         $instance->setProvider($provider);
         }
                     /**
@@ -2423,8 +2448,8 @@
          * @static 
          */ 
         public static function macro($name, $macro)
-        {
-                        \Illuminate\Auth\SessionGuard::macro($name, $macro);
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        \Lab404\Impersonate\Guard\SessionGuard::macro($name, $macro);
         }
                     /**
          * Mix another object into the class.
@@ -2436,8 +2461,8 @@
          * @static 
          */ 
         public static function mixin($mixin, $replace = true)
-        {
-                        \Illuminate\Auth\SessionGuard::mixin($mixin, $replace);
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        \Lab404\Impersonate\Guard\SessionGuard::mixin($mixin, $replace);
         }
                     /**
          * Checks if macro is registered.
@@ -2447,8 +2472,8 @@
          * @static 
          */ 
         public static function hasMacro($name)
-        {
-                        return \Illuminate\Auth\SessionGuard::hasMacro($name);
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        return \Lab404\Impersonate\Guard\SessionGuard::hasMacro($name);
         }
                     /**
          * Flush the existing macros.
@@ -2457,8 +2482,498 @@
          * @static 
          */ 
         public static function flushMacros()
+        {            //Method inherited from \Illuminate\Auth\SessionGuard         
+                        \Lab404\Impersonate\Guard\SessionGuard::flushMacros();
+        }
+         
+    }
+            /**
+     * 
+     *
+     * @see \Illuminate\View\Compilers\BladeCompiler
+     */ 
+        class Blade {
+                    /**
+         * Compile the view at the given path.
+         *
+         * @param string|null $path
+         * @return void 
+         * @static 
+         */ 
+        public static function compile($path = null)
         {
-                        \Illuminate\Auth\SessionGuard::flushMacros();
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        $instance->compile($path);
+        }
+                    /**
+         * Get the path currently being compiled.
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function getPath()
+        {
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        return $instance->getPath();
+        }
+                    /**
+         * Set the path currently being compiled.
+         *
+         * @param string $path
+         * @return void 
+         * @static 
+         */ 
+        public static function setPath($path)
+        {
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        $instance->setPath($path);
+        }
+                    /**
+         * Compile the given Blade template contents.
+         *
+         * @param string $value
+         * @return string 
+         * @static 
+         */ 
+        public static function compileString($value)
+        {
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        return $instance->compileString($value);
+        }
+                    /**
+         * Evaluate and render a Blade string to HTML.
+         *
+         * @param string $string
+         * @param array $data
+         * @param bool $deleteCachedView
+         * @return string 
+         * @static 
+         */ 
+        public static function render($string, $data = [], $deleteCachedView = false)
+        {
+                        return \Illuminate\View\Compilers\BladeCompiler::render($string, $data, $deleteCachedView);
+        }
+                    /**
+         * Render a component instance to HTML.
+         *
+         * @param \Illuminate\View\Component $component
+         * @return string 
+         * @static 
+         */ 
+        public static function renderComponent($component)
+        {
+                        return \Illuminate\View\Compilers\BladeCompiler::renderComponent($component);
+        }
+                    /**
+         * Strip the parentheses from the given expression.
+         *
+         * @param string $expression
+         * @return string 
+         * @static 
+         */ 
+        public static function stripParentheses($expression)
+        {
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        return $instance->stripParentheses($expression);
+        }
+                    /**
+         * Register a custom Blade compiler.
+         *
+         * @param callable $compiler
+         * @return void 
+         * @static 
+         */ 
+        public static function extend($compiler)
+        {
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        $instance->extend($compiler);
+        }
+                    /**
+         * Get the extensions used by the compiler.
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function getExtensions()
+        {
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        return $instance->getExtensions();
+        }
+                    /**
+         * Register an "if" statement directive.
+         *
+         * @param string $name
+         * @param callable $callback
+         * @return void 
+         * @static 
+         */ 
+        public static function if($name, $callback)
+        {
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        $instance->if($name, $callback);
+        }
+                    /**
+         * Check the result of a condition.
+         *
+         * @param string $name
+         * @param mixed $parameters
+         * @return bool 
+         * @static 
+         */ 
+        public static function check($name, ...$parameters)
+        {
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        return $instance->check($name, ...$parameters);
+        }
+                    /**
+         * Register a class-based component alias directive.
+         *
+         * @param string $class
+         * @param string|null $alias
+         * @param string $prefix
+         * @return void 
+         * @static 
+         */ 
+        public static function component($class, $alias = null, $prefix = '')
+        {
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        $instance->component($class, $alias, $prefix);
+        }
+                    /**
+         * Register an array of class-based components.
+         *
+         * @param array $components
+         * @param string $prefix
+         * @return void 
+         * @static 
+         */ 
+        public static function components($components, $prefix = '')
+        {
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        $instance->components($components, $prefix);
+        }
+                    /**
+         * Get the registered class component aliases.
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function getClassComponentAliases()
+        {
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        return $instance->getClassComponentAliases();
+        }
+                    /**
+         * Register a new anonymous component path.
+         *
+         * @param string $path
+         * @param string|null $prefix
+         * @return void 
+         * @static 
+         */ 
+        public static function anonymousComponentPath($path, $prefix = null)
+        {
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        $instance->anonymousComponentPath($path, $prefix);
+        }
+                    /**
+         * Register an anonymous component namespace.
+         *
+         * @param string $directory
+         * @param string|null $prefix
+         * @return void 
+         * @static 
+         */ 
+        public static function anonymousComponentNamespace($directory, $prefix = null)
+        {
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        $instance->anonymousComponentNamespace($directory, $prefix);
+        }
+                    /**
+         * Register a class-based component namespace.
+         *
+         * @param string $namespace
+         * @param string $prefix
+         * @return void 
+         * @static 
+         */ 
+        public static function componentNamespace($namespace, $prefix)
+        {
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        $instance->componentNamespace($namespace, $prefix);
+        }
+                    /**
+         * Get the registered anonymous component paths.
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function getAnonymousComponentPaths()
+        {
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        return $instance->getAnonymousComponentPaths();
+        }
+                    /**
+         * Get the registered anonymous component namespaces.
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function getAnonymousComponentNamespaces()
+        {
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        return $instance->getAnonymousComponentNamespaces();
+        }
+                    /**
+         * Get the registered class component namespaces.
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function getClassComponentNamespaces()
+        {
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        return $instance->getClassComponentNamespaces();
+        }
+                    /**
+         * Register a component alias directive.
+         *
+         * @param string $path
+         * @param string|null $alias
+         * @return void 
+         * @static 
+         */ 
+        public static function aliasComponent($path, $alias = null)
+        {
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        $instance->aliasComponent($path, $alias);
+        }
+                    /**
+         * Register an include alias directive.
+         *
+         * @param string $path
+         * @param string|null $alias
+         * @return void 
+         * @static 
+         */ 
+        public static function include($path, $alias = null)
+        {
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        $instance->include($path, $alias);
+        }
+                    /**
+         * Register an include alias directive.
+         *
+         * @param string $path
+         * @param string|null $alias
+         * @return void 
+         * @static 
+         */ 
+        public static function aliasInclude($path, $alias = null)
+        {
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        $instance->aliasInclude($path, $alias);
+        }
+                    /**
+         * Register a handler for custom directives.
+         *
+         * @param string $name
+         * @param callable $handler
+         * @return void 
+         * @throws \InvalidArgumentException
+         * @static 
+         */ 
+        public static function directive($name, $handler)
+        {
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        $instance->directive($name, $handler);
+        }
+                    /**
+         * Get the list of custom directives.
+         *
+         * @return array 
+         * @static 
+         */ 
+        public static function getCustomDirectives()
+        {
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        return $instance->getCustomDirectives();
+        }
+                    /**
+         * Register a new precompiler.
+         *
+         * @param callable $precompiler
+         * @return void 
+         * @static 
+         */ 
+        public static function precompiler($precompiler)
+        {
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        $instance->precompiler($precompiler);
+        }
+                    /**
+         * Set the echo format to be used by the compiler.
+         *
+         * @param string $format
+         * @return void 
+         * @static 
+         */ 
+        public static function setEchoFormat($format)
+        {
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        $instance->setEchoFormat($format);
+        }
+                    /**
+         * Set the "echo" format to double encode entities.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function withDoubleEncoding()
+        {
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        $instance->withDoubleEncoding();
+        }
+                    /**
+         * Set the "echo" format to not double encode entities.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function withoutDoubleEncoding()
+        {
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        $instance->withoutDoubleEncoding();
+        }
+                    /**
+         * Indicate that component tags should not be compiled.
+         *
+         * @return void 
+         * @static 
+         */ 
+        public static function withoutComponentTags()
+        {
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        $instance->withoutComponentTags();
+        }
+                    /**
+         * Get the path to the compiled version of a view.
+         *
+         * @param string $path
+         * @return string 
+         * @static 
+         */ 
+        public static function getCompiledPath($path)
+        {            //Method inherited from \Illuminate\View\Compilers\Compiler         
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        return $instance->getCompiledPath($path);
+        }
+                    /**
+         * Determine if the view at the given path is expired.
+         *
+         * @param string $path
+         * @return bool 
+         * @static 
+         */ 
+        public static function isExpired($path)
+        {            //Method inherited from \Illuminate\View\Compilers\Compiler         
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        return $instance->isExpired($path);
+        }
+                    /**
+         * Get a new component hash for a component name.
+         *
+         * @param string $component
+         * @return string 
+         * @static 
+         */ 
+        public static function newComponentHash($component)
+        {
+                        return \Illuminate\View\Compilers\BladeCompiler::newComponentHash($component);
+        }
+                    /**
+         * Compile a class component opening.
+         *
+         * @param string $component
+         * @param string $alias
+         * @param string $data
+         * @param string $hash
+         * @return string 
+         * @static 
+         */ 
+        public static function compileClassComponentOpening($component, $alias, $data, $hash)
+        {
+                        return \Illuminate\View\Compilers\BladeCompiler::compileClassComponentOpening($component, $alias, $data, $hash);
+        }
+                    /**
+         * Compile the end-component statements into valid PHP.
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function compileEndComponentClass()
+        {
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        return $instance->compileEndComponentClass();
+        }
+                    /**
+         * Sanitize the given component attribute value.
+         *
+         * @param mixed $value
+         * @return mixed 
+         * @static 
+         */ 
+        public static function sanitizeComponentAttribute($value)
+        {
+                        return \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($value);
+        }
+                    /**
+         * Compile an end-once block into valid PHP.
+         *
+         * @return string 
+         * @static 
+         */ 
+        public static function compileEndOnce()
+        {
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        return $instance->compileEndOnce();
+        }
+                    /**
+         * Add a handler to be executed before echoing a given class.
+         *
+         * @param string|callable $class
+         * @param callable|null $handler
+         * @return void 
+         * @static 
+         */ 
+        public static function stringable($class, $handler = null)
+        {
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        $instance->stringable($class, $handler);
+        }
+                    /**
+         * Compile Blade echos into valid PHP.
+         *
+         * @param string $value
+         * @return string 
+         * @static 
+         */ 
+        public static function compileEchos($value)
+        {
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        return $instance->compileEchos($value);
+        }
+                    /**
+         * Apply the echo handler for the value if it exists.
+         *
+         * @param string $value
+         * @return string 
+         * @static 
+         */ 
+        public static function applyEchoHandler($value)
+        {
+                        /** @var \Illuminate\View\Compilers\BladeCompiler $instance */
+                        return $instance->applyEchoHandler($value);
         }
          
     }
@@ -13739,6 +14254,16 @@
                         /** @var \Illuminate\Routing\Router $instance */
                         return $instance->macroCall($method, $parameters);
         }
+                    /**
+         * 
+         *
+         * @see \Lab404\Impersonate\ImpersonateServiceProvider::registerRoutesMacro()
+         * @static 
+         */ 
+        public static function impersonate()
+        {
+                        return \Illuminate\Routing\Router::impersonate();
+        }
          
     }
             /**
@@ -18101,12 +18626,35 @@
      
 }
 
+    namespace Illuminate\Routing { 
+            /**
+     * 
+     *
+     * @mixin \Illuminate\Routing\RouteRegistrar
+     */ 
+        class Router {
+                    /**
+         * 
+         *
+         * @see \Lab404\Impersonate\ImpersonateServiceProvider::registerRoutesMacro()
+         * @static 
+         */ 
+        public static function impersonate()
+        {
+                        return \Illuminate\Routing\Router::impersonate();
+        }
+         
+    }
+     
+}
+
 
 namespace  { 
             class App extends \Illuminate\Support\Facades\App {}
             class Arr extends \Illuminate\Support\Arr {}
             class Artisan extends \Illuminate\Support\Facades\Artisan {}
             class Auth extends \Illuminate\Support\Facades\Auth {}
+            class Blade extends \Illuminate\Support\Facades\Blade {}
             class Broadcast extends \Illuminate\Support\Facades\Broadcast {}
             class Bus extends \Illuminate\Support\Facades\Bus {}
             class Cache extends \Illuminate\Support\Facades\Cache {}
