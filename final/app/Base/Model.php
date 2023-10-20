@@ -2,7 +2,6 @@
 
 namespace App\Base;
 
-use App\Models\IdeHelper;
 use Illuminate\Auth\Authenticatable as AuthenticatableTrait;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Database\Eloquent\Model as BaseModel;
